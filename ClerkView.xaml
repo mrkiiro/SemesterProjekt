@@ -10,5 +10,15 @@
 
     <Grid>
 
+        <TextBox x:Name="ReservationCustomerName" HorizontalAlignment="Left" Margin="295,86,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="50" Width="215"/>
+        <TextBlock HorizontalAlignment="Left" Margin="104,86,0,0" TextWrapping="Wrap" Text="Customer Name" VerticalAlignment="Top" Height="50" Width="130"/>
+        <Button x:Name="FindReservation" Content="Button" HorizontalAlignment="Left" Margin="403,184,0,0" VerticalAlignment="Top" Width="107" Height="44"/>
+        <TextBlock HorizontalAlignment="Left" Margin="599,86,0,0" TextWrapping="Wrap" Text="Reservation" VerticalAlignment="Top" Height="50" Width="115"/>
+        <TextBlock HorizontalAlignment="Left" Margin="599,141,0,0" TextWrapping="Wrap" Text="Række" VerticalAlignment="Top" Height="30" Width="115"/>
+        <TextBlock HorizontalAlignment="Left" Margin="599,196,0,0" TextWrapping="Wrap" Text="Sædde" VerticalAlignment="Top" Height="30" Width="115"/>
+        <TextBlock HorizontalAlignment="Left" Margin="765,86,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="30" Width="215"/>
+        <TextBlock HorizontalAlignment="Left" Margin="765,196,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="30" Width="215"/>
+        <TextBlock HorizontalAlignment="Left" Margin="765,141,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="30" Width="215"/>
+
     </Grid>
 </Page>
