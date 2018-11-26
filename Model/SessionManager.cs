@@ -50,7 +50,7 @@ namespace App8
             if (UnameExist && PwordExist)
             {
                 //log ind
-                this.loggedInUser = u;
+                this.loggedInUser = DBManager.getManager().getUserByName(u.UserName);
                 return true;
             }
             else if (UnameExist)

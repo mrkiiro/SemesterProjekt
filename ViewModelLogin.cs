@@ -32,10 +32,28 @@ namespace App8
             User thisUser = new User(LoginUserName, LoginPassword);
             if (SessionManager.GetManager().Login(thisUser))
             {
-                Frame CurrFrame = (Frame) Window.Current.Content;
-                CurrFrame.Navigate(typeof(ClerkView));
+                changeView();
             }
             
+        }
+
+        public void changeView()
+        {
+            Frame CurrFrame = (Frame)Window.Current.Content;
+            Debug.WriteLine("i tried to do things.. logged in as a: " +
+                            SessionManager.GetManager().loggedInUser.AcessLevel);
+
+            switch (SessionManager.GetManager().loggedInUser.AcessLevel)
+            {
+                case User.AcessLevels.Clerk:
+                    CurrFrame.Navigate(typeof(ClerkView));
+                    break;
+                case User.AcessLevels.Admin:
+                    CurrFrame.Navigate(typeof(AdminLogin));
+                    break;
+                default:
+                    break;
+            }
         }
 
         public string LoginUserName
