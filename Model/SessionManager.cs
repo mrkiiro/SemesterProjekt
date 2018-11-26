@@ -45,12 +45,15 @@ namespace App8
                 {
                     PwordExist = true;
                 }
+                Debug.WriteLine("Database contains: "+thisUser.UserName+", Pass: "+thisUser.Password);
             }
+            Debug.WriteLine("i tried with: "+u.UserName+" , pass: "+u.Password);
 
             if (UnameExist && PwordExist)
             {
                 //log ind
                 this.loggedInUser = u;
+                Debug.WriteLine("User logged in: "+loggedInUser.UserName);
                 return true;
             }
             else if (UnameExist)

@@ -33,7 +33,7 @@ namespace App8
             if (SessionManager.GetManager().Login(thisUser))
             {
                 Frame CurrFrame = (Frame) Window.Current.Content;
-                CurrFrame.Navigate(typeof(ClerkView));
+                CurrFrame.Navigate(typeof());
             }
             
         }

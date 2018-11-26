@@ -7,7 +7,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    
+    <Page.DataContext>
+        <local:ViewModelLogin/>
+    </Page.DataContext>
 
     <Grid>
         <TextBox x:Name="LoginUserNameTextBox" HorizontalAlignment="Left" Margin="244,200,0,0" TextWrapping="Wrap" Text="{Binding LoginUserName, Mode=TwoWay}"  VerticalAlignment="Top" Height="50" Width="375"/>
