@@ -19,6 +19,9 @@
         <TextBlock x:Name="ReservedTextBlock" HorizontalAlignment="Left" Margin="765,86,0,0" TextWrapping="Wrap" Text="YesOrNo" VerticalAlignment="Top" Height="30" Width="215"/>
         <TextBlock HorizontalAlignment="Left" Margin="765,196,0,0" TextWrapping="Wrap" Text="Number" VerticalAlignment="Top" Height="30" Width="215"/>
         <TextBlock HorizontalAlignment="Left" Margin="765,141,0,0" TextWrapping="Wrap" Text="Number" VerticalAlignment="Top" Height="30" Width="215"/>
+        <TextBlock HorizontalAlignment="Left" Margin="104,141,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="599,242,0,0" TextWrapping="Wrap" Text="have paid or not paid beforehand" VerticalAlignment="Top" Height="60" Width="97"/>
+        <TextBlock HorizontalAlignment="Left" Margin="765,256,0,0" TextWrapping="Wrap" Text="Pay now yes or no" VerticalAlignment="Top" Height="46" Width="103"/>
 
     </Grid>
 </Page>
