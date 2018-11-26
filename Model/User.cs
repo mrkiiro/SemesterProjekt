@@ -17,7 +17,7 @@ namespace App8
             _userName = username;
             _password = password;
             _acessLevel = AcessLevels.Anon;
-        }
+        } //lolComent
 
         public static class AcessLevels
         {
