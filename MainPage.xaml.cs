@@ -26,5 +26,15 @@ namespace App8
         {
             this.InitializeComponent();
         }
+
+        private void UserNameTextBox_TextChanged(System.Object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void LoginButton_Click(System.Object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
