@@ -9,6 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <TextBlock x:Name="AdministratorTextBlock" HorizontalAlignment="Left" Margin="74,50,0,0" TextWrapping="Wrap" Text="Administrator" VerticalAlignment="Top" Height="40" Width="196" FontSize="24"/>
 
     </Grid>
 </Page>
