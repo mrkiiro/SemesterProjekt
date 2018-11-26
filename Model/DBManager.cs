@@ -27,10 +27,23 @@ namespace App8.Model
         public List<User> GetUsers()
         {
             List<User> users = new List<User>();
-            users.Add(new User("Admin", "Admin"));
-            users.Add(new User("Oliver", "kode"));
+            users.Add(new Admin("Admin", "Admin"));
+            users.Add(new Clerk("Oliver", "Kode"));
 
             return users;
+        }
+
+        public User getUserByName(string name)
+        {
+            List < User > users = GetUsers();
+
+            foreach (User myUser in users)
+            {
+                if (myUser.UserName == name)
+                    return myUser;
+            }
+
+            return null;
         }
     }
 }

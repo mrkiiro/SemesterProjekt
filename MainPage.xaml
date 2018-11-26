@@ -10,6 +10,10 @@
     <Page.DataContext>
         <local:ViewModelLogin/>
     </Page.DataContext>
+<<<<<<< HEAD
+=======
+
+>>>>>>> Login-branch
 
     <Grid>
         <TextBox x:Name="LoginUserNameTextBox" HorizontalAlignment="Left" Margin="244,200,0,0" TextWrapping="Wrap" Text="{Binding LoginUserName, Mode=TwoWay}"  VerticalAlignment="Top" Height="50" Width="375"/>

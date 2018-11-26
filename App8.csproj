@@ -92,8 +92,13 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="AdministratorView.xaml.cs">
       <DependentUpon>AdministratorView.xaml</DependentUpon>
+=======
+    <Compile Include="AdminLogin.xaml.cs">
+      <DependentUpon>AdminLogin.xaml</DependentUpon>
+>>>>>>> Login-branch
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -104,6 +109,8 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Admin.cs" />
+    <Compile Include="Model\Clerk.cs" />
     <Compile Include="Model\DBManager.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -132,7 +139,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+<<<<<<< HEAD
     <Page Include="AdministratorView.xaml">
+=======
+    <Page Include="AdminLogin.xaml">
+>>>>>>> Login-branch
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
