@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using App8.Model;
 
 namespace App8
 {
@@ -13,7 +14,6 @@ namespace App8
 
         private SessionManager()
         {
-            loggedInUser = new User("kasper", "pass");
         }
 
         public SessionManager GetManager()
@@ -24,6 +24,17 @@ namespace App8
             }
 
             return _myManager;
+        }
+
+        public void Login(string uname, string pword)
+        {
+            DBManager myDb = DBManager.getManager();
+            List<User> users = myDb.GetUsers();
+
+            foreach (User thisUser in users)
+            {
+                
+            }
         }
     }
 }
