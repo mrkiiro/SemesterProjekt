@@ -20,20 +20,47 @@ namespace App8
         {
             if(_myManager == null)
             {
-                _myManager = this;
+                _myManager = new SessionManager();
             }
 
             return _myManager;
         }
 
-        public void Login(string uname, string pword)
+        public bool Login(User u)
         {
             DBManager myDb = DBManager.getManager();
             List<User> users = myDb.GetUsers();
 
+            bool UnameExist = false;
+            bool PwordExist = false;
+
             foreach (User thisUser in users)
             {
-                
+                if (thisUser.UserName == u.UserName)
+                {
+                    UnameExist = true;
+                }
+                if (thisUser.Password == u.Password && UnameExist)
+                {
+                    PwordExist = true;
+                }
+            }
+
+            if (UnameExist && PwordExist)
+            {
+                //log ind
+                this.loggedInUser = u;
+                return true;
+            }
+            else if (UnameExist)
+            {
+                //Username Correct
+                return false;
+            }
+            else
+            {
+                //username not correct
+                return false;
             }
         }
     }
