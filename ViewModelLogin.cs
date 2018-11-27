@@ -32,14 +32,12 @@ namespace App8
             User thisUser = new User(LoginUserName, LoginPassword);
             if (SessionManager.GetManager().Login(thisUser))
             {
-<<<<<<< HEAD
+                //to do, Kig på koden her under
                 Frame CurrFrame = (Frame) Window.Current.Content;
                 CurrFrame.Navigate(typeof());
-=======
                 changeView();
->>>>>>> Login-branch
             }
-            
+
         }
 
         public void changeView()
