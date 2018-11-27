@@ -34,7 +34,7 @@ namespace App8
             {
                 //to do, Kig på koden her under
                 Frame CurrFrame = (Frame) Window.Current.Content;
-                CurrFrame.Navigate(typeof());
+                CurrFrame.Navigate(typeof(ClerkView));
                 changeView();
             }
 

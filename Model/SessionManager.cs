@@ -52,12 +52,9 @@ namespace App8
             if (UnameExist && PwordExist)
             {
                 //log ind
-<<<<<<< HEAD
                 this.loggedInUser = u;
                 Debug.WriteLine("User logged in: "+loggedInUser.UserName);
-=======
                 this.loggedInUser = DBManager.getManager().getUserByName(u.UserName);
->>>>>>> Login-branch
                 return true;
             }
             else if (UnameExist)
