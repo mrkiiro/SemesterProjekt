@@ -50,10 +50,7 @@ namespace App8
             Debug.WriteLine("i tried with: "+u.UserName+" , pass: "+u.Password);
 
             if (UnameExist && PwordExist)
-            {
-                //To do, kig på koden her under
-                this.loggedInUser = u;
-                Debug.WriteLine("User logged in: "+loggedInUser.UserName);
+            {;
                 this.loggedInUser = DBManager.getManager().getUserByName(u.UserName);
                 return true;
             }

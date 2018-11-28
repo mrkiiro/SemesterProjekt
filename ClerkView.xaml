@@ -7,6 +7,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <local:ViewModelClerk/>
+    </Page.DataContext>
 
     <Grid>
         <Pivot x:Name="rootPivot" Title="Clerk Page">
@@ -23,7 +26,7 @@
                     <TextBlock HorizontalAlignment="Left" Margin="765,141,0,0" TextWrapping="Wrap" Text="Number" VerticalAlignment="Top" Height="30" Width="215" FontSize="20"/>
                     <TextBlock HorizontalAlignment="Left" Margin="599,242,0,0" TextWrapping="Wrap" Text="have paid or not paid beforehand" VerticalAlignment="Top" Height="113" Width="115" FontSize="20"/>
                     <TextBlock HorizontalAlignment="Left" Margin="765,256,0,0" TextWrapping="Wrap" Text="Pay now yes or no" VerticalAlignment="Top" Height="59" Width="103" FontSize="20"/>
-                    <Button Content="Log Out" HorizontalAlignment="Left" Margin="443,279,0,0" VerticalAlignment="Top" FontSize="12" Height="36" Width="67"/>
+                    <Button Content="Log Out" HorizontalAlignment="Left" Margin="443,279,0,0" VerticalAlignment="Top" FontSize="12" Height="36" Width="67" Command="{Binding LogOutCommand}"/>
 
                 </Grid>
             </PivotItem>
@@ -62,6 +65,8 @@
                     <TextBlock HorizontalAlignment="Left" Margin="100,91,0,0" TextWrapping="Wrap" Text="Phone number" VerticalAlignment="Top" FontSize="20"/>
                     <TextBlock HorizontalAlignment="Left" Margin="100,132,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Height="27" Width="131" FontSize="20"/>
                     <TextBlock HorizontalAlignment="Left" Margin="296,132,0,0" TextWrapping="Wrap" Text="Email of the customer" VerticalAlignment="Top" Height="27" Width="204" FontSize="20"/>
+                    <Button x:Name="PayWithCreditCardButton" Content="Credit Card" HorizontalAlignment="Left" Margin="628,120,0,0" VerticalAlignment="Top" FontSize="20"/>
+                    <Button x:Name="PayWithCash" Content="Cash" HorizontalAlignment="Left" Margin="786,120,0,0" VerticalAlignment="Top" FontSize="20"/>
 
                 </Grid>
             </PivotItem>
