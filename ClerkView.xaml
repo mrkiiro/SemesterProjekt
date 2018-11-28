@@ -29,12 +29,39 @@
             </PivotItem>
             <PivotItem Header="Change seat reservation">
                 <Grid>
+                    <Pivot x:Name="RootPivot" Title="Clerk Page">
+                        <PivotItem Header="Hall 1">
+                            <Grid>
+                    <Button x:Name="CheckOutButton" Content="Check out" HorizontalAlignment="Left" Margin="1112,399,0,0" VerticalAlignment="Top" Width="105"/>
+                    <Button x:Name="ReserveSeatButton" Content="Reserve" HorizontalAlignment="Left" Margin="944,399,0,0" VerticalAlignment="Top" Width="105"/>
+                            </Grid>
+                        </PivotItem>
+                        <PivotItem Header="Hall 2">
+                            <Grid>
 
+                            </Grid>
+                        </PivotItem>
+                        <PivotItem Header="Hall 3">
+                            <Grid>
+
+                            </Grid>
+                        </PivotItem>
+                        <PivotItem Header="Hall 4">
+                            <Grid>
+
+                            </Grid>
+                        </PivotItem>
+                    </Pivot>
                 </Grid>
             </PivotItem>
-            <PivotItem Header="Section 3">
-                <!--Pivot content goes here-->
-                <TextBlock Text="Content of section 3."/>
+            <PivotItem Header="Check out">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Left" Margin="234,45,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="370,86,0,0" TextWrapping="Wrap" Text="Phone number of the customer" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="NameOfTheCustomerTextBlock" HorizontalAlignment="Left" Margin="370,45,0,0" TextWrapping="Wrap" Text="Name Of the Customer" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="234,86,0,0" TextWrapping="Wrap" Text="Phone number" VerticalAlignment="Top"/>
+
+                </Grid>
             </PivotItem>
         </Pivot>
     </Grid>
