@@ -10,7 +10,7 @@
 
     <Grid>
 
-        <TextBox x:Name="ReservationCustomerName" HorizontalAlignment="Left" Margin="295,86,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="50" Width="215"/>
+       <!-- <TextBox x:Name="ReservationCustomerName" HorizontalAlignment="Left" Margin="295,86,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="50" Width="215"/>
         <TextBlock HorizontalAlignment="Left" Margin="104,86,0,0" TextWrapping="Wrap" Text="Customer Name" VerticalAlignment="Top" Height="50" Width="130"/>
         <Button x:Name="FindReservation" Content="Button" HorizontalAlignment="Left" Margin="403,184,0,0" VerticalAlignment="Top" Width="107" Height="44"/>
         <TextBlock HorizontalAlignment="Left" Margin="599,86,0,0" TextWrapping="Wrap" Text="Reserved" VerticalAlignment="Top" Height="50" Width="115"/>
@@ -21,7 +21,32 @@
         <TextBlock HorizontalAlignment="Left" Margin="765,141,0,0" TextWrapping="Wrap" Text="Number" VerticalAlignment="Top" Height="30" Width="215"/>
         <TextBlock HorizontalAlignment="Left" Margin="104,141,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="599,242,0,0" TextWrapping="Wrap" Text="have paid or not paid beforehand" VerticalAlignment="Top" Height="60" Width="97"/>
-        <TextBlock HorizontalAlignment="Left" Margin="765,256,0,0" TextWrapping="Wrap" Text="Pay now yes or no" VerticalAlignment="Top" Height="46" Width="103"/>
-
+        <TextBlock HorizontalAlignment="Left" Margin="765,256,0,0" TextWrapping="Wrap" Text="Pay now yes or no" VerticalAlignment="Top" Height="46" Width="103"/> -->
+        <Pivot x:Name="rootPivot" Title="Category Title">
+            <PivotItem Header="Section 1">
+                <Grid>
+                    <TextBox x:Name="ReservationCustomerName" HorizontalAlignment="Left" Margin="295,86,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="50" Width="215"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="104,86,0,0" TextWrapping="Wrap" Text="Customer Name" VerticalAlignment="Top" Height="50" Width="130"/>
+                    <Button x:Name="FindReservation" Content="Button" HorizontalAlignment="Left" Margin="403,184,0,0" VerticalAlignment="Top" Width="107" Height="44"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="599,86,0,0" TextWrapping="Wrap" Text="Reserved" VerticalAlignment="Top" Height="50" Width="115"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="599,141,0,0" TextWrapping="Wrap" Text="Row" VerticalAlignment="Top" Height="30" Width="115"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="599,196,0,0" TextWrapping="Wrap" Text="Seats" VerticalAlignment="Top" Height="30" Width="115"/>
+                    <TextBlock x:Name="ReservedTextBlock" HorizontalAlignment="Left" Margin="765,86,0,0" TextWrapping="Wrap" Text="YesOrNo" VerticalAlignment="Top" Height="30" Width="215"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="765,196,0,0" TextWrapping="Wrap" Text="Number" VerticalAlignment="Top" Height="30" Width="215"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="765,141,0,0" TextWrapping="Wrap" Text="Number" VerticalAlignment="Top" Height="30" Width="215"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="104,141,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="599,242,0,0" TextWrapping="Wrap" Text="have paid or not paid beforehand" VerticalAlignment="Top" Height="60" Width="97"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="765,256,0,0" TextWrapping="Wrap" Text="Pay now yes or no" VerticalAlignment="Top" Height="46" Width="103"/>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="Section 2">
+                <!--Pivot content goes here-->
+                <TextBlock Text="Content of section 2."/>
+            </PivotItem>
+            <PivotItem Header="Section 3">
+                <!--Pivot content goes here-->
+                <TextBlock Text="Content of section 3."/>
+            </PivotItem>
+        </Pivot>
     </Grid>
 </Page>
