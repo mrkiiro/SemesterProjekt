@@ -13,7 +13,7 @@
 
     <Grid>
         <TextBox x:Name="LoginUserNameTextBox" HorizontalAlignment="Left" Margin="244,200,0,0" TextWrapping="Wrap" Text="{Binding LoginUserName, Mode=TwoWay}"  VerticalAlignment="Top" Height="50" Width="375"/>
-        <TextBox x:Name="LoginPasswordTextBox" HorizontalAlignment="Left" Margin="244,288,0,0" TextWrapping="Wrap" Text="{Binding LoginPassword, Mode=TwoWay}"  VerticalAlignment="Top" Height="50" Width="375"/>
+        <PasswordBox x:Name="LoginPasswordTextBox" HorizontalAlignment="Left" Margin="244,288,0,0" Password="{Binding LoginPassword, Mode=TwoWay}"  VerticalAlignment="Top" Height="50" Width="375"/>
         <TextBlock HorizontalAlignment="Left" Margin="78,72,0,0" TextWrapping="Wrap" Text="login" VerticalAlignment="Top" Height="52" Width="88" FontSize="36"/>
         <TextBlock HorizontalAlignment="Left" Margin="78,200,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Height="50" Width="124" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Margin="78,288,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Height="48" Width="88" FontSize="20"/>
