@@ -32,8 +32,8 @@
                     <Pivot x:Name="RootPivot" Title="Clerk Page">
                         <PivotItem Header="Hall 1">
                             <Grid>
-                    <Button x:Name="CheckOutButton" Content="Check out" HorizontalAlignment="Left" Margin="1112,399,0,0" VerticalAlignment="Top" Width="105"/>
-                    <Button x:Name="ReserveSeatButton" Content="Reserve" HorizontalAlignment="Left" Margin="944,399,0,0" VerticalAlignment="Top" Width="105"/>
+                                <Button x:Name="CheckOutButton" Content="Check out" HorizontalAlignment="Left" Margin="1112,399,0,0" VerticalAlignment="Top" Width="105"/>
+                                <Button x:Name="ReserveSeatButton" Content="Reserve" HorizontalAlignment="Left" Margin="944,399,0,0" VerticalAlignment="Top" Width="105"/>
                             </Grid>
                         </PivotItem>
                         <PivotItem Header="Hall 2">
@@ -56,10 +56,12 @@
             </PivotItem>
             <PivotItem Header="Check out">
                 <Grid>
-                    <TextBlock HorizontalAlignment="Left" Margin="234,45,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="370,86,0,0" TextWrapping="Wrap" Text="Phone number of the customer" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="NameOfTheCustomerTextBlock" HorizontalAlignment="Left" Margin="370,45,0,0" TextWrapping="Wrap" Text="Name Of the Customer" VerticalAlignment="Top"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="234,86,0,0" TextWrapping="Wrap" Text="Phone number" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="100,45,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" FontSize="20"/>
+                    <TextBlock x:Name="PhoneNumberOfTheCustomer" HorizontalAlignment="Left" Margin="296,91,0,0" TextWrapping="Wrap" Text="Phone number of the customer" VerticalAlignment="Top" FontSize="20"/>
+                    <TextBlock x:Name="NameOfTheCustomerTextBlock" HorizontalAlignment="Left" Margin="296,45,0,0" TextWrapping="Wrap" Text="Name Of the Customer" VerticalAlignment="Top" FontSize="20"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="100,91,0,0" TextWrapping="Wrap" Text="Phone number" VerticalAlignment="Top" FontSize="20"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="100,132,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Height="27" Width="131" FontSize="20"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="296,132,0,0" TextWrapping="Wrap" Text="Email of the customer" VerticalAlignment="Top" Height="27" Width="204" FontSize="20"/>
 
                 </Grid>
             </PivotItem>
