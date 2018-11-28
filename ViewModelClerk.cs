@@ -12,6 +12,8 @@ namespace App8
 {
     class ViewModelClerk
     {
+        #region LogOut
+
         private readonly RelayCommand _logOut;
         public ViewModelClerk()
         {
@@ -33,6 +35,9 @@ namespace App8
             //skift side til login siden
             //Debug.WriteLine("We are ready to Implement LOGOUT!!");
         }
+
+        #endregion
         
+
     }
 }
