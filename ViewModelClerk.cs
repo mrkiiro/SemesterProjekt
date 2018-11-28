@@ -53,7 +53,7 @@ namespace App8
         public void ShowCustomerInformation()
         {
             DBManager.getManager().GetUsers();
-            Debug.WriteLine("We are ready to Implement LOGOUT!!");
+            Debug.WriteLine("We are ready to Implement search funktion!!");
         }
 
         #endregion
