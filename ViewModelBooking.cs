@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,19 +15,24 @@ namespace App8
 {
     class ViewModelBooking
     {
-        private Sal minSAL;
-        private static int salRow = 5;
+        private Sal mySal;
+        private const int salRow = 5;
         private ObservableCollection<Sal> _salListe;
-        private int salSeats = 10;
+        private const int salSeats = 10;
         public Button[,] btnArray;
         private Button btn;
         private string[,] gridArray;
         private bool _available;
         private Grid _viewGrid;
-
+        public Grid ViewGrid
+        {
+            get { return _viewGrid; }
+            set { _viewGrid = value; }
+        }
         public ViewModelBooking()
         {
-            _viewGrid = new Grid();;
+            ViewGrid = new Grid();
+            ViewGrid.Background = new SolidColorBrush(Colors.Red);
             gridArray = new string[salRow, salSeats];
             btnArray = new Button[salRow, salSeats];
 
@@ -35,22 +41,9 @@ namespace App8
             _salListe.Add(new Sal(5, 10, "Sal 2"));
 
 
-            for (int i = 0; i < salRow; i++)
-            {
-                for (int j = 0; j < salSeats; j++)
-                {
-
-                    RowDefinition rd = new RowDefinition();
-                    rd.Height = new GridLength(30, GridUnitType.Pixel);
-                    _viewGrid.RowDefinitions.Add(rd);
-
-                    ColumnDefinition cd = new ColumnDefinition();
-                    cd.Width = new GridLength(30, GridUnitType.Pixel);
-                    _viewGrid.ColumnDefinitions.Add(cd);
-                }
-            }
-            VisGrid();
         }
+
+        
 
         public void VisGrid()
         {
@@ -62,12 +55,20 @@ namespace App8
 
                     btn = new Button();
                     btn.Click += gridClicked(i, j);
-                    btn.Content = "";
+                    btn.Content = gridArray[i,j];
                     btnArray[i, j] = btn;
-                    _viewGrid.Children.Add(btn);
+                    ViewGrid.Children.Add(btn);
                     Grid.SetRow(btn, i);
                     Grid.SetColumn(btn, j);
                     btn.Background = new SolidColorBrush(Colors.DarkGreen);
+
+                    RowDefinition rd = new RowDefinition();
+                    rd.Height = new GridLength(30, GridUnitType.Pixel);
+                    ViewGrid.RowDefinitions.Add(rd);
+
+                    ColumnDefinition cd = new ColumnDefinition();
+                    cd.Width = new GridLength(30, GridUnitType.Pixel);
+                    ViewGrid.ColumnDefinitions.Add(cd);
                 }
             }
         }

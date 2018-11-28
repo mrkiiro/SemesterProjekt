@@ -7,10 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-<Page.DataContext>
-    <local:ViewModelBooking />
-</Page.DataContext>
+    <Page.DataContext>
+        <local:ViewModelBooking />
+    </Page.DataContext>
     <Grid>
-
+        <TextBlock Text="Hekjafhaejkfhaskjfhaskj" DataContext="{Binding ViewGrid}"/>
     </Grid>
 </Page>

@@ -49,12 +49,13 @@ namespace App8
             switch (SessionManager.GetManager().loggedInUser.AcessLevel)
             {
                 case User.AcessLevels.Clerk:
-                    CurrFrame.Navigate(typeof(ClerkView));
+                    CurrFrame.Navigate(typeof(Booking));
                     break;
                 case User.AcessLevels.Admin:
-                    CurrFrame.Navigate(typeof(AdminLogin));
+                    CurrFrame.Navigate(typeof(Booking));
                     break;
                 default:
+                    CurrFrame.Navigate(typeof(Booking));
                     break;
             }
         }
