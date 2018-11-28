@@ -6,20 +6,23 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using App8.Model;
 using GalaSoft.MvvmLight.Command;
 
 namespace App8
 {
     class ViewModelClerk
     {
-        #region LogOut
 
-        private readonly RelayCommand _logOut;
         public ViewModelClerk()
         {
             _logOut = new RelayCommand(LogOut);
+            _showCustomerInformation = new RelayCommand(ShowCustomerInformation);
         }
 
+        #region Log out
+
+        private readonly RelayCommand _logOut;
         public RelayCommand LogOutCommand
         {
             get { return _logOut; }
@@ -37,7 +40,24 @@ namespace App8
         }
 
         #endregion
-        
+
+        #region Show customer information
+
+        private readonly RelayCommand _showCustomerInformation;
+
+        public RelayCommand ShowCustomerInformationCommand
+        {
+            get { return _showCustomerInformation; }
+        }
+
+        public void ShowCustomerInformation()
+        {
+            DBManager.getManager().GetUsers();
+            Debug.WriteLine("We are ready to Implement LOGOUT!!");
+        }
+
+        #endregion
+
 
     }
 }
