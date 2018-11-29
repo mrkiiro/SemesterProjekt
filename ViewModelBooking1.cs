@@ -13,38 +13,39 @@ using App8.Model;
 
 namespace App8
 {
-    class ViewModelBooking
+    class ViewModelBooking1
     {
         private Sal mySal;
         private const int salRow = 5;
         private ObservableCollection<Sal> _salListe;
         private const int salSeats = 10;
         public Button[,] btnArray;
-        private Button btn;
         private string[,] gridArray;
         private bool _available;
+        private TextBlock myBlock;
         private Grid _viewGrid;
         public Grid ViewGrid
         {
             get { return _viewGrid; }
             set { _viewGrid = value; }
         }
-        public ViewModelBooking()
+
+        public TextBlock MyBlock
         {
-            ViewGrid = new Grid();
-            ViewGrid.Background = new SolidColorBrush(Colors.Red);
+            get { return myBlock; }
+            set { myBlock = value; }
+        }
+
+        public ViewModelBooking1()
+        {
             gridArray = new string[salRow, salSeats];
             btnArray = new Button[salRow, salSeats];
-
+            MyBlock.Text = " ++++ This is from codebehind!";
             _salListe = new ObservableCollection<Sal>();
             _salListe.Add(new Sal(10, 20, "Sal 1"));
             _salListe.Add(new Sal(5, 10, "Sal 2"));
 
-
         }
-
-        
-
         public void VisGrid()
         {
             for (int i = 0; i < salRow; i++)
@@ -53,11 +54,11 @@ namespace App8
                 {
                     //add ´new seat(i, j);
 
-                    btn = new Button();
+                    Button btn = new Button();
                     btn.Click += gridClicked(i, j);
                     btn.Content = gridArray[i,j];
                     btnArray[i, j] = btn;
-                    ViewGrid.Children.Add(btn);
+                    _viewGrid.Children.Add(btn);
                     Grid.SetRow(btn, i);
                     Grid.SetColumn(btn, j);
                     btn.Background = new SolidColorBrush(Colors.DarkGreen);
