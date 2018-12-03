@@ -29,6 +29,9 @@ namespace App8.Model
             List<User> users = new List<User>();
             users.Add(new Admin("Admin", "Admin"));
             users.Add(new Clerk("Oliver", "Kode"));
+            users.Add(new Customer("c", "c"));
+            users.Add(new Customer("t", "t"));
+
 
             return users;
         }
