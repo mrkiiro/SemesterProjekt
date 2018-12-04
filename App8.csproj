@@ -102,6 +102,7 @@
       <DependentUpon>ClerkView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ComboBoxItemConvert.cs" />
+    <Compile Include="ComboBoxOptionsMangerger.cs" />
     <Compile Include="CustomerView.xaml.cs">
       <DependentUpon>CustomerView.xaml</DependentUpon>
     </Compile>

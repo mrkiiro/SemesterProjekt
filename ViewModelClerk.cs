@@ -112,7 +112,7 @@ namespace App8
             public string ComboBoxHumanReadableOption { get; set; }
         }
 
-        public class ComboBoxOptionsManager
+        /*public class ComboBoxOptionsManager
         {
 
             public static void GetComboBoxList(ObservableCollection<ComboBoxItem> ComboBoxItems)
@@ -132,7 +132,7 @@ namespace App8
 
                 return items;
             }
-        }
+        }*/
         string _SelectedComboBoxOption = "Option1";
         public ComboBoxItem SelectedComboBoxOption
         {
