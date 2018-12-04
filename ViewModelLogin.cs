@@ -54,7 +54,8 @@ namespace App8
                 case User.AcessLevels.Admin:
                     CurrFrame.Navigate(typeof(AdminLogin));
                     break;
-                default:
+                case User.AcessLevels.Customer:
+                    CurrFrame.Navigate(typeof(CustomerView));
                     break;
             }
         }

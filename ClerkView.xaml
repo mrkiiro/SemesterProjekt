@@ -8,32 +8,73 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.DataContext>
+        <local:ViewModelClerk/>
+    </Page.DataContext>
+
     <Grid>
-        <Pivot x:Name="rootPivot" Title="Category Title">
+        <Pivot x:Name="rootPivot" Title="Clerk Page">
             <PivotItem Header="Customer ticket details">
-                <Grid>
-                    <TextBox x:Name="ReservationCustomerName" HorizontalAlignment="Left" Margin="295,86,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="50" Width="215"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="104,86,0,0" TextWrapping="Wrap" Text="Customer Name" VerticalAlignment="Top" Height="50" Width="130"/>
-                    <Button x:Name="FindReservation" Content="Button" HorizontalAlignment="Left" Margin="403,184,0,0" VerticalAlignment="Top" Width="107" Height="44"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="599,86,0,0" TextWrapping="Wrap" Text="Reserved" VerticalAlignment="Top" Height="50" Width="115"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="599,141,0,0" TextWrapping="Wrap" Text="Row" VerticalAlignment="Top" Height="30" Width="115"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="599,196,0,0" TextWrapping="Wrap" Text="Seats" VerticalAlignment="Top" Height="30" Width="115"/>
-                    <TextBlock x:Name="ReservedTextBlock" HorizontalAlignment="Left" Margin="765,86,0,0" TextWrapping="Wrap" Text="YesOrNo" VerticalAlignment="Top" Height="30" Width="215"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="765,196,0,0" TextWrapping="Wrap" Text="Number" VerticalAlignment="Top" Height="30" Width="215"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="765,141,0,0" TextWrapping="Wrap" Text="Number" VerticalAlignment="Top" Height="30" Width="215"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="104,141,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="599,242,0,0" TextWrapping="Wrap" Text="have paid or not paid beforehand" VerticalAlignment="Top" Height="60" Width="97"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="765,256,0,0" TextWrapping="Wrap" Text="Pay now yes or no" VerticalAlignment="Top" Height="46" Width="103"/>
+                <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                    <TextBlock HorizontalAlignment="Left" Margin="104,86,0,0" TextWrapping="Wrap" Text="Customer Name" VerticalAlignment="Top" Height="50" Width="186" FontSize="20"/>
+                    <Button x:Name="FindReservation" Content="Search" HorizontalAlignment="Left" Margin="403,184,0,0" VerticalAlignment="Top" Width="107" Height="44" FontSize="20" Command="{Binding ShowCustomerInformationCommand}"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="599,86,0,0" TextWrapping="Wrap" Text="Reserved" VerticalAlignment="Top" Height="50" Width="115" FontSize="20"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="599,141,0,0" TextWrapping="Wrap" Text="Row" VerticalAlignment="Top" Height="30" Width="115" FontSize="20"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="599,196,0,0" TextWrapping="Wrap" Text="Seats" VerticalAlignment="Top" Height="30" Width="115" FontSize="20"/>
+                    <TextBlock x:Name="ReservedTextBlock" HorizontalAlignment="Left" Margin="765,86,0,0" TextWrapping="Wrap" Text="YesOrNo" VerticalAlignment="Top" Height="30" Width="215" FontSize="20"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="765,196,0,0" TextWrapping="Wrap" Text="Number" VerticalAlignment="Top" Height="30" Width="215" FontSize="20"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="765,141,0,0" TextWrapping="Wrap" Text="Number" VerticalAlignment="Top" Height="30" Width="215" FontSize="20"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="599,242,0,0" TextWrapping="Wrap" Text="have paid or not paid beforehand" VerticalAlignment="Top" Height="113" Width="115" FontSize="20"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="765,256,0,0" TextWrapping="Wrap" Text="Pay now yes or no" VerticalAlignment="Top" Height="59" Width="103" FontSize="20"/>
+                    <Button Content="Log Out" HorizontalAlignment="Left" Margin="443,279,0,0" VerticalAlignment="Top" FontSize="12" Height="36" Width="67" Command="{Binding LogOutCommand}"/>
+                    <TextBox x:Name="ReservationCustomerName" Text="{x:Bind ComboBox.SelectedItem , Mode=OneWay}" HorizontalAlignment="Left" Margin="295,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="215"/>
+
+                    <StackPanel>
+                        <ComboBox x:Name="ComboBox" HorizontalAlignment="Left" Height="50" Margin="295,129,0,0" VerticalAlignment="Top" Width="215"
+                                  ItemsSource="{Binding CustomerList}"
+                                  DisplayMemberPath="UserName"/>
+                    </StackPanel>
+
                 </Grid>
             </PivotItem>
             <PivotItem Header="Change seat reservation">
                 <Grid>
-                    
+                    <Pivot x:Name="RootPivot" Title="Clerk Page">
+                        <PivotItem Header="Hall 1">
+                            <Grid>
+                                <Button x:Name="CheckOutButton" Content="Check out" HorizontalAlignment="Left" Margin="1112,399,0,0" VerticalAlignment="Top" Width="105"/>
+                                <Button x:Name="ReserveSeatButton" Content="Reserve" HorizontalAlignment="Left" Margin="944,399,0,0" VerticalAlignment="Top" Width="105"/>
+                            </Grid>
+                        </PivotItem>
+                        <PivotItem Header="Hall 2">
+                            <Grid>
+
+                            </Grid>
+                        </PivotItem>
+                        <PivotItem Header="Hall 3">
+                            <Grid>
+
+                            </Grid>
+                        </PivotItem>
+                        <PivotItem Header="Hall 4">
+                            <Grid>
+
+                            </Grid>
+                        </PivotItem>
+                    </Pivot>
                 </Grid>
             </PivotItem>
-            <PivotItem Header="Section 3">
-                <!--Pivot content goes here-->
-                <TextBlock Text="Content of section 3."/>
+            <PivotItem Header="Check out">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Left" Margin="100,45,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" FontSize="20"/>
+                    <TextBlock x:Name="PhoneNumberOfTheCustomer" HorizontalAlignment="Left" Margin="296,91,0,0" TextWrapping="Wrap" Text="Phone number of the customer" VerticalAlignment="Top" FontSize="20"/>
+                    <TextBlock x:Name="NameOfTheCustomerTextBlock" HorizontalAlignment="Left" Margin="296,45,0,0" TextWrapping="Wrap" Text="Name Of the Customer" VerticalAlignment="Top" FontSize="20"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="100,91,0,0" TextWrapping="Wrap" Text="Phone number" VerticalAlignment="Top" FontSize="20"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="100,132,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Height="27" Width="131" FontSize="20"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="296,132,0,0" TextWrapping="Wrap" Text="Email of the customer" VerticalAlignment="Top" Height="27" Width="204" FontSize="20"/>
+                    <Button x:Name="PayWithCreditCardButton" Content="Credit Card" HorizontalAlignment="Left" Margin="628,120,0,0" VerticalAlignment="Top" FontSize="20"/>
+                    <Button x:Name="PayWithCash" Content="Cash" HorizontalAlignment="Left" Margin="786,120,0,0" VerticalAlignment="Top" FontSize="20"/>
+                </Grid>
             </PivotItem>
         </Pivot>
     </Grid>
