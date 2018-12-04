@@ -8,10 +8,6 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <!--<Page.Resources>
-        <local:ComboBoxItemConvert x:Key="ComboBoxItemConvert" />
-    </Page.Resources>-->
-
     <Page.DataContext>
         <local:ViewModelClerk/>
     </Page.DataContext>
@@ -31,29 +27,14 @@
                     <TextBlock HorizontalAlignment="Left" Margin="599,242,0,0" TextWrapping="Wrap" Text="have paid or not paid beforehand" VerticalAlignment="Top" Height="113" Width="115" FontSize="20"/>
                     <TextBlock HorizontalAlignment="Left" Margin="765,256,0,0" TextWrapping="Wrap" Text="Pay now yes or no" VerticalAlignment="Top" Height="59" Width="103" FontSize="20"/>
                     <Button Content="Log Out" HorizontalAlignment="Left" Margin="443,279,0,0" VerticalAlignment="Top" FontSize="12" Height="36" Width="67" Command="{Binding LogOutCommand}"/>
-                    <TextBox x:Name="ReservationCustomerName" Text="{x:Bind ComboBox.SelectedItem , Mode=OneWay}" HorizontalAlignment="Left" Margin="295,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="215"/>
+                    <TextBox x:Name="ReservationCustomerName" Text="{x:Bind ComboBox.SelectedItem , Mode=OneWay}" HorizontalAlignment="Left" Margin="295,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="215"/>
 
                     <StackPanel>
-                        <ComboBox Name="ComboBox"
-                                  ItemsSource="{Binding CustomerList }"
-                           
-                                  DisplayMemberPath="UserName"
-                                  />
-                    </StackPanel><!--SelectedComboBoxOption.ComboBoxHumanReadableOption-->
-                                  <!--SelectedItem="{x:Bind selectedComboBoxOption, Mode=TwoWay, Converter={StaticResource ComboBoxItemConvert}}"-->
+                        <ComboBox x:Name="ComboBox" HorizontalAlignment="Left" Height="50" Margin="295,129,0,0" VerticalAlignment="Top" Width="215"
+                                  ItemsSource="{Binding CustomerList}"
+                                  DisplayMemberPath="UserName"/>
+                    </StackPanel>
 
-
-                    <ComboBox Height = "20" Width = "100" HorizontalAlignment = "Left" Margin = "104,164,0,0" ItemsSource="{Binding SelectCustomers}">
-                        <ComboBoxItem Content = "{Binding SelectCustomers}"/>
-                    </ComboBox>
-
-                    <ListView HorizontalAlignment="Left" Height="50" Margin="295,129,0,0" VerticalAlignment="Top" Width="215" ItemsSource="{Binding CustomerList}">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding UserName}"></TextBlock>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
                 </Grid>
             </PivotItem>
             <PivotItem Header="Change seat reservation">
@@ -93,7 +74,6 @@
                     <TextBlock HorizontalAlignment="Left" Margin="296,132,0,0" TextWrapping="Wrap" Text="Email of the customer" VerticalAlignment="Top" Height="27" Width="204" FontSize="20"/>
                     <Button x:Name="PayWithCreditCardButton" Content="Credit Card" HorizontalAlignment="Left" Margin="628,120,0,0" VerticalAlignment="Top" FontSize="20"/>
                     <Button x:Name="PayWithCash" Content="Cash" HorizontalAlignment="Left" Margin="786,120,0,0" VerticalAlignment="Top" FontSize="20"/>
-
                 </Grid>
             </PivotItem>
         </Pivot>

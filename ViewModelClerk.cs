@@ -57,7 +57,7 @@ namespace App8
         #region Show customer information
 
         private readonly RelayCommand _showCustomerInformation;
-        private string _userName;
+        //private string _userName;
         public void Search()
         {
 
@@ -68,19 +68,14 @@ namespace App8
             get { return _showCustomerInformation; }
         }
 
-        public string UserName
+        /*public string UserName
         {
             get { return _userName; }
-        }
+        }*/
 
         public List<User> CustomerList
         {
             get { return _customerList; }
-        }
-
-        public List<Customer> SelectCustomers
-        {
-            get { return _selectCustomers; }
         }
 
         public void ShowCustomerInformation()
@@ -91,36 +86,14 @@ namespace App8
 
         #endregion
 
-        private List<Customer> _selectCustomers;
-
         public void list<SelectCustomers>()
         {
 
         }
-        private ObservableCollection<ComboBoxItem> ComboBoxOptions;
-
-        private string _comboBoxOption;
-        private string _comboBoxHumanReadableOption;
-        private ComboBoxItem _selectedComboBoxOption;
-
         void RaisePropertyChanged(string prop)
         {
             if (PropertyChanged != null) { PropertyChanged(this, new PropertyChangedEventArgs(prop)); }
         }
         public event PropertyChangedEventHandler PropertyChanged;
-
-
-        public string ComboBoxOption
-        {
-            get { return _comboBoxOption; }
-            set { _comboBoxOption = value; }
-        }
-
-        public string ComboBoxHumanReadableOption
-        {
-            get { return _comboBoxHumanReadableOption; }
-            set { _comboBoxHumanReadableOption = value; }
-        }
-
     }
 }
