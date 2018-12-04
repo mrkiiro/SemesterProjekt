@@ -35,5 +35,10 @@ namespace App8
         {
             get { return _password; }
         }
+
+        public override string ToString()
+        {
+            return UserName;
+        }
     }
 }

@@ -15,9 +15,6 @@ namespace App8
 {
     class ViewModelClerk : Page, INotifyPropertyChanged
     {
-        //Customer tt = new Customer("username", "password");
-        //Customer cc = new Customer("username", "password");
-
         private List<User> _customerList;
         public ViewModelClerk()
         {
@@ -34,7 +31,6 @@ namespace App8
                 }
             }
             _customerList = customer;
-            //_userName = DBManager.getManager().GetUsers(); //SessionManager.GetManager().loggedInUser.UserName;
         }
 
         #region Log out
@@ -106,50 +102,7 @@ namespace App8
         private string _comboBoxOption;
         private string _comboBoxHumanReadableOption;
         private ComboBoxItem _selectedComboBoxOption;
-        public class ComboBoxItem
-        {
-            public string ComboBoxOption { get; set; }
-            public string ComboBoxHumanReadableOption { get; set; }
-        }
 
-        /*public class ComboBoxOptionsManager
-        {
-
-            public static void GetComboBoxList(ObservableCollection<ComboBoxItem> ComboBoxItems)
-            {
-                var allItems = getComboBoxItems();
-                ComboBoxItems.Clear();
-                allItems.ForEach(p => ComboBoxItems.Add(p));
-            }
-
-            private static List<ComboBoxItem> getComboBoxItems()
-            {
-                var items = new List<ComboBoxItem>();
-
-                items.Add(new ComboBoxItem() {ComboBoxOption = "Option1", ComboBoxHumanReadableOption = "Option 1"});
-                items.Add(new ComboBoxItem() {ComboBoxOption = "Option2", ComboBoxHumanReadableOption = "Option 2"});
-                items.Add(new ComboBoxItem() {ComboBoxOption = "Option3", ComboBoxHumanReadableOption = "Option 3"});
-
-                return items;
-            }
-        }*/
-        string _SelectedComboBoxOption = "Option1";
-        public ComboBoxItem SelectedComboBoxOption
-        {
-            get
-            {
-                return _selectedComboBoxOption;
-            }
-            set
-            {
-                if (_selectedComboBoxOption != value)
-                {
-                    _selectedComboBoxOption = value;
-                    RaisePropertyChanged("SelectedComboBoxOption");
-
-                }
-            }
-        }
         void RaisePropertyChanged(string prop)
         {
             if (PropertyChanged != null) { PropertyChanged(this, new PropertyChangedEventArgs(prop)); }
@@ -168,5 +121,6 @@ namespace App8
             get { return _comboBoxHumanReadableOption; }
             set { _comboBoxHumanReadableOption = value; }
         }
+
     }
 }

@@ -8,9 +8,9 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Page.Resources>
+    <!--<Page.Resources>
         <local:ComboBoxItemConvert x:Key="ComboBoxItemConvert" />
-    </Page.Resources>
+    </Page.Resources>-->
 
     <Page.DataContext>
         <local:ViewModelClerk/>
@@ -31,16 +31,16 @@
                     <TextBlock HorizontalAlignment="Left" Margin="599,242,0,0" TextWrapping="Wrap" Text="have paid or not paid beforehand" VerticalAlignment="Top" Height="113" Width="115" FontSize="20"/>
                     <TextBlock HorizontalAlignment="Left" Margin="765,256,0,0" TextWrapping="Wrap" Text="Pay now yes or no" VerticalAlignment="Top" Height="59" Width="103" FontSize="20"/>
                     <Button Content="Log Out" HorizontalAlignment="Left" Margin="443,279,0,0" VerticalAlignment="Top" FontSize="12" Height="36" Width="67" Command="{Binding LogOutCommand}"/>
+                    <TextBox x:Name="ReservationCustomerName" Text="{x:Bind ComboBox.SelectedItem , Mode=OneWay}" HorizontalAlignment="Left" Margin="295,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="215"/>
 
                     <StackPanel>
-                        <ComboBox x:Name="ComboBox"
-                                  ItemsSource="{Binding ComboBoxOption}"
-                                  SelectedItem="{x:Bind selectedComboBoxOption, Mode=TwoWay, Converter={StaticResource ComboBoxItemConvert}}"
-                                  SelectedValuePath="ComboBoxOptions" 
-                                  DisplayMemberPath="SelectedComboBox"
-                                  Header="ComboBox"/>
-                        <TextBox x:Name="ReservationCustomerName" Text="{x:Bind ComboBox.SelectedItem.(local:ViewModelClerk.SelectedComboBoxOption) , Mode=OneWay}" HorizontalAlignment="Left" Margin="295,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="215"/>
+                        <ComboBox Name="ComboBox"
+                                  ItemsSource="{Binding CustomerList }"
+                           
+                                  DisplayMemberPath="UserName"
+                                  />
                     </StackPanel><!--SelectedComboBoxOption.ComboBoxHumanReadableOption-->
+                                  <!--SelectedItem="{x:Bind selectedComboBoxOption, Mode=TwoWay, Converter={StaticResource ComboBoxItemConvert}}"-->
 
 
                     <ComboBox Height = "20" Width = "100" HorizontalAlignment = "Left" Margin = "104,164,0,0" ItemsSource="{Binding SelectCustomers}">
