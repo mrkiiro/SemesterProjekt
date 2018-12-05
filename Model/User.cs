@@ -1,15 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace App8
 {
-    class User// hej
+    [DataContract]
+    class User
     {
+        [DataMember]
         private string _userName;
+        [DataMember]
         private string _password;
+        [DataMember]
         protected internal int AcessLevel;
 
         public User(string username, string password)

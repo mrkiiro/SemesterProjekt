@@ -20,21 +20,17 @@ namespace App8
         private SessionManager mySession = SessionManager.GetManager();
         private readonly RelayCommand _loginCommand;
 
-
-
         public ViewModelLogin()
         {
+            SessionManager sm = SessionManager.GetManager();
             _loginCommand = new RelayCommand(Login);
         }
 
         public void Login()
         {
             User thisUser = new User(LoginUserName, LoginPassword);
-            if (SessionManager.GetManager().Login(thisUser))
+            if (SessionManager.Login(thisUser))
             {
-                //to do, Kig på koden her under
-                Frame CurrFrame = (Frame) Window.Current.Content;
-                CurrFrame.Navigate(typeof(ClerkView));
                 changeView();
             }
 
@@ -43,10 +39,8 @@ namespace App8
         public void changeView()
         {
             Frame CurrFrame = (Frame)Window.Current.Content;
-            Debug.WriteLine("i tried to do things.. logged in as a: " +
-                            SessionManager.GetManager().loggedInUser.AcessLevel);
 
-            switch (SessionManager.GetManager().loggedInUser.AcessLevel)
+            switch (SessionManager.loggedInUser.AcessLevel)
             {
                 case User.AcessLevels.Clerk:
                     CurrFrame.Navigate(typeof(ClerkView));

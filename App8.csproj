@@ -115,7 +115,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\SessionManager.cs" />
     <Compile Include="Model\User.cs" />
+
     <Compile Include="ViewModelClerk.cs" />
+    <Compile Include="SaveAndLoad.cs" />
     <Compile Include="ViewModelLogin.cs" />
   </ItemGroup>
   <ItemGroup>

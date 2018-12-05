@@ -11,7 +11,7 @@ namespace App8
     class SessionManager
     {
         private static SessionManager _myManager;
-        public User loggedInUser;
+        public static User loggedInUser;
 
         private SessionManager()
         {
@@ -19,7 +19,7 @@ namespace App8
 
         public static SessionManager GetManager()
         {
-            if(_myManager == null)
+            if (_myManager == null)
             {
                 _myManager = new SessionManager();
             }
@@ -27,10 +27,9 @@ namespace App8
             return _myManager;
         }
 
-        public bool Login(User u)
+        public static bool Login(User u)
         {
-            DBManager myDb = DBManager.getManager();
-            List<User> users = myDb.GetUsers();
+            List<User> users = DBManager.getManager().GetUsers();
 
             bool UnameExist = false;
             bool PwordExist = false;
@@ -45,13 +44,11 @@ namespace App8
                 {
                     PwordExist = true;
                 }
-                Debug.WriteLine("Database contains: "+thisUser.UserName+", Pass: "+thisUser.Password);
             }
-            Debug.WriteLine("i tried with: "+u.UserName+" , pass: "+u.Password);
 
             if (UnameExist && PwordExist)
-            {;
-                this.loggedInUser = DBManager.getManager().getUserByName(u.UserName);
+            {
+                loggedInUser = DBManager.getUserByName(u.UserName);
                 return true;
             }
             else if (UnameExist)
