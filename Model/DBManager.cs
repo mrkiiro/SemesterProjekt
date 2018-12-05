@@ -18,7 +18,19 @@ namespace App8.Model
 
         private DBManager()
         {
+            instanciateDB();
             users = loadUsers().Result;
+        }
+
+        private void instanciateDB()
+        {
+            List<Clerk> clerk = new List<Clerk>();
+            clerk.Add(new Clerk("Oliver", "Kode"));
+            SaveAndLoad<List<Clerk>>.Save(clerk, "ClerkDB.json");
+
+            List<Admin> admin = new List<Admin>();
+            admin.Add(new Admin("Oliver", "Kode"));
+            SaveAndLoad<List<Admin>>.Save(admin, "AdminDB.json");
         }
 
         public static DBManager getManager()
