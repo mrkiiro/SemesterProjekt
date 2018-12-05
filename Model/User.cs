@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using System.Runtime.Serialization;
+using System.ServiceModel.Security;
+
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,6 +22,7 @@ namespace App8
 
         public User(string username, string password)
         {
+
             _userName = username;
             _password = password;
         }
