@@ -18,7 +18,11 @@ namespace App8
         private List<User> _customerList;
         public ViewModelClerk()
         {
+            #region Log out
+
             _logOut = new RelayCommand(LogOut);
+
+                #endregion
             _showCustomerInformation = new RelayCommand(ShowCustomerInformation);
 
             _customerList = DBManager.getManager().GetUsers();
