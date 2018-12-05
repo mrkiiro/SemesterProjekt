@@ -43,7 +43,7 @@ namespace App8
         public void LogOut()
         {
             Debug.WriteLine("Jeg kører log ud");
-            SessionManager.GetManager().LoggedInUser = null;
+            SessionManager.loggedInUser = null;
             Frame CurrFrame = (Frame) Window.Current.Content;
             CurrFrame.Navigate(typeof(MainPage));
 
@@ -52,7 +52,7 @@ namespace App8
         public void Next()
         {
             Debug.WriteLine("Jeg kører next");
-            SessionManager.GetManager().LoggedInUser = null;
+            SessionManager.loggedInUser = null;
             Frame CurrFrame = (Frame)Window.Current.Content;
             CurrFrame.Navigate(typeof(MovieView));
         }
