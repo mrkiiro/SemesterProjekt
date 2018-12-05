@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
+using System.Runtime.Serialization.Json;
+using Windows.Data.Json;
 using Windows.Storage;
 using Windows.Storage.Streams;
 using GalaSoft.MvvmLight.Messaging;
@@ -16,27 +17,25 @@ namespace App8
     {
         private static readonly StorageFolder _folder = Windows.Storage.ApplicationData.Current.LocalFolder;
 
-        public static async Task<List<T>> Load(string fileName)
+        public static async Task<T> Load(string fileName)
         {
-            XmlSerializer xs = new XmlSerializer(typeof(T));
-            StorageFile file = await _folder.CreateFileAsync(fileName, CreationCollisionOption.OpenIfExists);
+            StorageFile jsonFile = await _folder.CreateFileAsync(fileName, CreationCollisionOption.OpenIfExists);
+            DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(T));
 
-            List<T> loadedList = new List<T>();
-            using (var stream = file.OpenStreamForWriteAsync().Result)
+            using (Stream stream = await jsonFile.OpenStreamForReadAsync())
             {
-                loadedList = (List<T>)xs.Deserialize(stream);
+                return (T)jsonSerializer.ReadObject(stream);
             }
-            return loadedList;
         }
 
         public static async void Save(T objectToSave, string fileName)
         {
-            XmlSerializer xs = new XmlSerializer(typeof(T));
-            StorageFile file = await _folder.CreateFileAsync(fileName, CreationCollisionOption.OpenIfExists);
+            StorageFile jsonFile = await _folder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
+            DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(T));
 
-            using (var stream = file.OpenStreamForWriteAsync().Result)
+            using (Stream stream = await jsonFile.OpenStreamForWriteAsync())
             {
-                xs.Serialize(stream, objectToSave);
+                jsonSerializer.WriteObject(stream, objectToSave);
             }
         }
 
