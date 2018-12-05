@@ -111,6 +111,7 @@
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Clerk.cs" />
     <Compile Include="Model\DBManager.cs" />
+    <Compile Include="Movie.cs" />
     <Compile Include="MovieView.xaml.cs">
       <DependentUpon>MovieView.xaml</DependentUpon>
     </Compile>
@@ -118,11 +119,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\SessionManager.cs" />
     <Compile Include="Model\User.cs" />
-
     <Compile Include="ViewModelClerk.cs" />
     <Compile Include="SaveAndLoad.cs" />
     <Compile Include="ViewModelAdmin.cs" />
-
     <Compile Include="ViewModelLogin.cs" />
     <Compile Include="ViewModelMovie.cs" />
   </ItemGroup>
