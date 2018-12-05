@@ -34,16 +34,16 @@ namespace App8.Model
             clerk.Add(new Clerk("Oliver", "Kode"));
             SaveAndLoad<List<Clerk>>.Save(clerk, "ClerkDB.json");
             */
-            List<Admin> admins = await SaveAndLoad<List<Admin>>.Load("AdminDB.json");
+            //List<Admin> admins = await SaveAndLoad<List<Admin>>.Load("AdminDB.json");
             List<Clerk> clerks = await SaveAndLoad<List<Clerk>>.Load("ClerkDB.json");
 
             List<User> users = new List<User>();
-
+            /*
             foreach (Admin admin in admins)
             {
                 users.Add((User)admin);
             }
-
+            */
             foreach (Clerk thisClerk in clerks)
             {
                 users.Add((User)thisClerk);
@@ -63,7 +63,7 @@ namespace App8.Model
 
         public static User getUserByName(string name)
         {
-            foreach (User myUser in users)
+            foreach (User myUser in getManager().GetUsers())
             {
                 if (myUser.UserName == name)
                     return myUser;

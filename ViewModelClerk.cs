@@ -43,7 +43,7 @@ namespace App8
 
         public void LogOut()
         {
-            SessionManager.GetManager().loggedInUser = null;
+            SessionManager.loggedInUser = null;
             Frame CurrFrame = (Frame)Window.Current.Content;
             CurrFrame.Navigate(typeof(MainPage));
 
