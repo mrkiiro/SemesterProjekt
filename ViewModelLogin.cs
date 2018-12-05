@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using App8.Annotations;
+using App8.Model;
 using GalaSoft.MvvmLight.Command;
 
 namespace App8
@@ -19,34 +20,39 @@ namespace App8
         private string _loginUserName, _loginPassword;
         private SessionManager mySession = SessionManager.GetManager();
         private readonly RelayCommand _loginCommand;
-
+        private string message;
 
 
         public ViewModelLogin()
         {
             _loginCommand = new RelayCommand(Login);
+            Message = "";
+            Debug.WriteLine(DBManager.getManager().getMovieByName("Peter Plys 5").title);
         }
 
         public void Login()
         {
             User thisUser = new User(LoginUserName, LoginPassword);
-            if (SessionManager.GetManager().Login(thisUser))
+            if (SessionManager.GetManager().Login(thisUser)) //Kan brugeren logge ind?
             {
                 //to do, Kig på koden her under
                 Frame CurrFrame = (Frame) Window.Current.Content;
-                CurrFrame.Navigate(typeof(ClerkView));
                 changeView();
             }
-
+            //viser fejl i enten username eller password
+            if(DBManager.getManager().getUserByName(LoginUserName) != null)
+                Message = "Fejl i password";
+            else
+            {
+                Message = "Fejl i brugernavn";
+            }
         }
 
         public void changeView()
         {
             Frame CurrFrame = (Frame)Window.Current.Content;
-            Debug.WriteLine("i tried to do things.. logged in as a: " +
-                            SessionManager.GetManager().loggedInUser.AcessLevel);
 
-            switch (SessionManager.GetManager().loggedInUser.AcessLevel)
+            switch (SessionManager.GetManager().LoggedInUser.AcessLevel)
             {
                 case User.AcessLevels.Clerk:
                     CurrFrame.Navigate(typeof(ClerkView));
@@ -82,6 +88,16 @@ namespace App8
         public RelayCommand LoginCommand
         {
             get { return _loginCommand; }
+        }
+
+        public string Message
+        {
+            get { return message; }
+            set
+            {
+                message = value;
+                OnPropertyChanged();
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

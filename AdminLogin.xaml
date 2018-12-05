@@ -7,8 +7,84 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <local:ViewModelAdmin/>
+    </Page.DataContext>
 
     <Grid>
+        <Pivot x:Name="RootPivot" Title="AdminData" Margin="0,-2,0,2">
+            <PivotItem Header="Edit Movies">
+                <Grid>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="List of Movies"/>
+                        <TextBlock Text="_______________________________________________________________"/>
+                        <TextBlock Text="Choose movies you want to edit"/>
 
+                        <TextBox PlaceholderText="Search for a movie..." TextWrapping="Wrap" Text="{Binding Searchbar}"/>
+                        <Button Content="Search" Width="100" Height="40" HorizontalAlignment="Left" Margin="50,50,0,50" VerticalAlignment="Top" Command="{Binding }"/>
+                        <ListView ItemsSource="{Binding Film}" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding title}"></TextBlock>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                    </StackPanel>
+
+
+                    <Button Content="Next" Width="100" Height="40" HorizontalAlignment="Left" Margin="300,300,0,0" VerticalAlignment="Top" Command="{Binding NextCommand}"/>
+                    <Button Content="Log Out" Width="100" Height="40" HorizontalAlignment="Left" Margin="405,300,0,0" VerticalAlignment="Top" Command="{Binding LogOutCommand}"/>
+                </Grid>
+
+
+            </PivotItem>
+            <PivotItem Header="Edit Users">
+                <Grid>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="List of Users"/>
+                        <TextBlock Text="_______________________________________________________________"/>
+                        <TextBlock Text="Choose users you want to edit"/>
+                        <Button Name="User1" Content="User1" Width="100" Height="40" Margin="4"/>
+                        <Button Name="User2" Content="User2" Width="100" Height="40" Margin="4"/>
+                        <Button Name="User3" Content="User3" Width="100" Height="40" Margin="4"/>
+                        <Button Name="User4" Content="User4" Width="100" Height="40" Margin="4"/>
+                        <Button Name="User5" Content="User5" Width="100" Height="40" Margin="4"/>
+                    </StackPanel>
+                    <RadioButton Content="Vælg" HorizontalAlignment="Left" Margin="152,65,0,0" VerticalAlignment="Top"/>
+                    <RadioButton Content="Vælg" HorizontalAlignment="Left" Margin="152,115,0,0" VerticalAlignment="Top"/>
+                    <RadioButton Content="Vælg" HorizontalAlignment="Left" Margin="152,165,0,0" VerticalAlignment="Top"/>
+                    <RadioButton Content="Vælg" HorizontalAlignment="Left" Margin="152,215,0,0" VerticalAlignment="Top"/>
+                    <RadioButton Content="Vælg" HorizontalAlignment="Left" Margin="152,265,0,0" VerticalAlignment="Top"/>
+                    <Grid/>
+                    <Button Content="Next" Width="100" Height="40" HorizontalAlignment="Left" Margin="300,300,0,0" VerticalAlignment="Top"/>
+                    <Button Content="Log Out" Width="100" Height="40" HorizontalAlignment="Left" Margin="405,300,0,0" VerticalAlignment="Top" Command="{Binding LogOutCommand}" RenderTransformOrigin="0.607,0.554"/>
+                </Grid>
+
+            </PivotItem>
+            <PivotItem Header="Statistics">
+                <Grid>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="List of movies"/>
+                        <TextBlock Text="_______________________________________________________________"/>
+                        <TextBlock Text="Choose which statistics you want to get"/>
+                        <Button Name="Statistics1" Content="Movie1" Width="100" Height="40" Margin="4"/>
+                        <Button Name="Statistics2" Content="Movie2" Width="100" Height="40" Margin="4"/>
+                        <Button Name="Statistics3" Content="Movie3" Width="100" Height="40" Margin="4"/>
+                        <Button Name="Statistics4" Content="Movie4" Width="100" Height="40" Margin="4"/>
+                        <Button Name="Statistics5" Content="Movie5" Width="100" Height="40" Margin="4"/>
+                    </StackPanel>
+                    <RadioButton Content="Vælg" HorizontalAlignment="Left" Margin="152,65,0,0" VerticalAlignment="Top"/>
+                    <RadioButton Content="Vælg" HorizontalAlignment="Left" Margin="152,115,0,0" VerticalAlignment="Top"/>
+                    <RadioButton Content="Vælg" HorizontalAlignment="Left" Margin="152,165,0,0" VerticalAlignment="Top"/>
+                    <RadioButton Content="Vælg" HorizontalAlignment="Left" Margin="152,215,0,0" VerticalAlignment="Top"/>
+                    <RadioButton Content="Vælg" HorizontalAlignment="Left" Margin="152,265,0,0" VerticalAlignment="Top"/>
+                    <Grid/>
+                    <Button Content="Next" Width="100" Height="40" HorizontalAlignment="Left" Margin="300,300,0,0" VerticalAlignment="Top"/>
+                    <Button Content="Log Out" Width="100" Height="40" HorizontalAlignment="Left" Margin="405,300,0,0" VerticalAlignment="Top" Command="{Binding LogOutCommand}"/>
+                </Grid>
+
+            </PivotItem>
+        </Pivot>
     </Grid>
 </Page>

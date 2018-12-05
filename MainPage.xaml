@@ -30,6 +30,8 @@
         <TextBlock HorizontalAlignment="Left" Margin="752,374,0,0" TextWrapping="Wrap" Text="Phone Number" VerticalAlignment="Top" Height="48" Width="142" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Margin="752,462,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Height="48" Width="88" FontSize="20"/>
         <Button x:Name="RegisterButton" Content="Register" HorizontalAlignment="Left" Margin="1154,556,0,0" VerticalAlignment="Top" Height="66" Width="155" FontSize="36" />
+        <TextBlock Text="{Binding Message}" HorizontalAlignment="Left" Margin="244,467,0,0" TextWrapping="Wrap"  VerticalAlignment="Top"/>
+
 
     </Grid>
 </Page>

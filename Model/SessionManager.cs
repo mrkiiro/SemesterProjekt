@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace App8
     class SessionManager
     {
         private static SessionManager _myManager;
-        public User loggedInUser;
+        public User LoggedInUser;
 
         private SessionManager()
         {
@@ -34,7 +35,7 @@ namespace App8
 
             bool UnameExist = false;
             bool PwordExist = false;
-
+            
             foreach (User thisUser in users)
             {
                 if (thisUser.UserName == u.UserName)
@@ -45,16 +46,16 @@ namespace App8
                 {
                     PwordExist = true;
                 }
-                Debug.WriteLine("Database contains: "+thisUser.UserName+", Pass: "+thisUser.Password);
+                Debug.WriteLine("Database contains: " + thisUser.UserName + ", Pass: " + thisUser.Password);
             }
-            Debug.WriteLine("i tried with: "+u.UserName+" , pass: "+u.Password);
+            Debug.WriteLine("i tried with: " + u.UserName + " , pass: " + u.Password);
 
             if (UnameExist && PwordExist)
             {
                 //To do, kig på koden her under
-                this.loggedInUser = u;
-                Debug.WriteLine("User logged in: "+loggedInUser.UserName);
-                this.loggedInUser = DBManager.getManager().getUserByName(u.UserName);
+                this.LoggedInUser = u;
+                Debug.WriteLine("User logged in: " + LoggedInUser.UserName);
+                this.LoggedInUser = DBManager.getManager().getUserByName(u.UserName);
                 return true;
             }
             else if (UnameExist)
@@ -68,5 +69,7 @@ namespace App8
                 return false;
             }
         }
+          
+
     }
 }
