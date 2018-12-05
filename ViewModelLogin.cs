@@ -39,7 +39,7 @@ namespace App8
                 changeView();
             }
             //viser fejl i enten username eller password
-            if(DBManager.getManager().getUserByName(LoginUserName) != null)
+            if(DBManager.getUserByName(LoginUserName) != null)
                 Message = "Fejl i password";
             else
             {
