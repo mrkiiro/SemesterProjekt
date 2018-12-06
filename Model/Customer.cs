@@ -10,6 +10,11 @@ namespace App8
     [DataContract]
     class Customer : User
     {
+        [DataMember]
+        private string email;
+        [DataMember]
+        private string phonen;
+
         public Customer(string username, string password) : base(username, password)
         {
             base.AcessLevel = User.AcessLevels.Customer;

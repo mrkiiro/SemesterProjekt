@@ -18,21 +18,47 @@ namespace App8
     class ViewModelLogin : INotifyPropertyChanged
     {
         private string _loginUserName, _loginPassword;
-        private readonly RelayCommand _loginCommand;
+        private readonly RelayCommand _loginCommand, _registerCustomerCommand;
         private string message;
+
+        private string _regUName, _regPWord, _regPhone, _regEmail;
 
 
         public ViewModelLogin()
         {
             _loginCommand = new RelayCommand(Login);
+            _registerCustomerCommand = new RelayCommand(Register);
             Message = "";
             startDb();
+        }
+
+        public async void Register()
+        {
+            List<Customer> customers = await DBManager.getManager().loadCustomers();
+
+            bool isUnameTaken = false;
+            foreach (var thisCustomer in customers)
+            {
+                if (thisCustomer.UserName == RegUName)
+                {
+                    isUnameTaken = true;
+                    break;
+                }
+            }
+
+            if (!isUnameTaken && RegUName != "")
+            {
+                await DBManager.getManager().addCustomer(
+                    new Customer(RegUName, RegPWord)
+                    );
+            }
         }
 
         private async Task startDb()
         {
             await DBManager.initializeDatabase();
         }
+
 
         public async void Login()
         {
@@ -101,6 +127,51 @@ namespace App8
                 message = value;
                 OnPropertyChanged();
             }
+        }
+
+        public string RegUName
+        {
+            get { return _regUName; }
+            set
+            {
+                _regUName = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string RegPWord
+        {
+            get { return _regPWord; }
+            set
+            {
+                _regPWord = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string RegPhone
+        {
+            get { return _regPhone; }
+            set
+            {
+                _regPhone = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string RegEmail
+        {
+            get { return _regEmail; }
+            set
+            {
+                _regEmail = value; 
+                OnPropertyChanged();
+            }
+        }
+
+        public RelayCommand RegisterCustomerCommand
+        {
+            get { return _registerCustomerCommand; }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

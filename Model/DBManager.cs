@@ -38,11 +38,11 @@ namespace App8.Model
             };
             List<Clerk> clerks = new List<Clerk>
             {
-                {new Clerk("Oliver", "kode") }
+                {new Clerk("Oliver", "Kode") }
             };
             List<Customer> customers = new List<Customer>
             {
-                { new Customer("Inge1243","123456")},
+                { new Customer("Inge123","123456")},
                 { new Customer("AndersJensen", "makskodylt")}
             };
             List<Movie> movies = new List<Movie>
@@ -63,6 +63,12 @@ namespace App8.Model
             Debug.WriteLine("Database with test data has been setup");
         }
 
+        public async Task addCustomer(Customer c)
+        {
+            List<Customer> customersInDatabase = await DBManager.getManager().loadCustomers();
+            customersInDatabase.Add(c);
+            await SaveAndLoad<List<Customer>>.Save(customersInDatabase, "CustomerDB.json");
+        }
 
         private async Task<List<User>> loadUsers()
         {
@@ -98,7 +104,7 @@ namespace App8.Model
             return await SaveAndLoad<List<Clerk>>.Load("ClerkDB.json");
         }
 
-        private async Task<List<Customer>> loadCustomers()
+        public async Task<List<Customer>> loadCustomers()
         {
             return await SaveAndLoad<List<Customer>>.Load("CustomerDB.json");
         }

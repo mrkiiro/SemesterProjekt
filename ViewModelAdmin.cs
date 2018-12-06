@@ -23,17 +23,18 @@ namespace App8
         private readonly RelayCommand _next;
         private ObservableCollection<Movie> _Film;
 
+        private ObservableCollection<Customer> _customers;
+
         public ViewModelAdmin()
         {
             _logOut = new RelayCommand(LogOut);
-            
             _getMovies = new RelayCommand(GetMovies);
-
             _next = new RelayCommand(Next);
-            loadMovies();
+
+            _loadMovies();
         }
 
-        public async Task loadMovies()
+        private async Task _loadMovies()
         {
             List<Movie> myMovies = await DBManager.getManager().GetMovies();
             _Film = new ObservableCollection<Movie>();
