@@ -122,11 +122,10 @@ namespace App8.Model
         {
             return await SaveAndLoad<List<Movie>>.Load("MovieDB.json");
         }
-        /*
-        public Movie getMovieByName(string name)
+        
+        public async Task<Movie> getMovieByName(string name)
         {
-            ObservableCollection<Movie> movies = GetMovies();
-
+            List<Movie> movies = await GetMovies();
             foreach (Movie myMovie in movies)
             {
                 {
@@ -137,6 +136,6 @@ namespace App8.Model
             }
             return null;
         }
-        */
+        
     }
 }

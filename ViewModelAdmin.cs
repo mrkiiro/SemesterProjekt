@@ -41,6 +41,7 @@ namespace App8
             {
                 _Film.Add(loadedMovie);
             }
+            OnPropertyChanged("Film");
         }
 
         public RelayCommand LogOutCommand
