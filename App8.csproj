@@ -98,6 +98,13 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CheckOutView.xaml.cs">
+      <DependentUpon>CheckOutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SeatReservationView.xaml.cs">
+      <DependentUpon>SeatReservationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModelCheckOut.cs" />
     <Compile Include="ClerkView.xaml.cs">
       <DependentUpon>ClerkView.xaml</DependentUpon>
     </Compile>
@@ -150,6 +157,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CheckOutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ClerkView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -163,6 +174,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="MovieView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SeatReservationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
