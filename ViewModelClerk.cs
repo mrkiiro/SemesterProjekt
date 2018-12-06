@@ -16,21 +16,26 @@ namespace App8
     class ViewModelClerk : Page, INotifyPropertyChanged
     {
         private List<User> _customerList;
+
         public ViewModelClerk()
         {
             _logOut = new RelayCommand(LogOut);
             _showCustomerInformation = new RelayCommand(ShowCustomerInformation);
+            getCustomers();
+        }
 
-            _customerList = DBManager.getManager().GetUsers();
+
+        private async void getCustomers()
+        {
+            _customerList = await DBManager.getManager().GetUsers();
             List<User> customer = new List<User>();
             foreach (User thisUser in _customerList)
             {
-                if (thisUser.AcessLevel == User.AcessLevels.Customer)
-                {
+                if(thisUser.AcessLevel == User.AcessLevels.Customer)
                     customer.Add(thisUser);
-                }
             }
             _customerList = customer;
+            RaisePropertyChanged("CustomerList");
         }
 
         #region Log out
@@ -43,13 +48,7 @@ namespace App8
 
         public void LogOut()
         {
-            SessionManager.loggedInUser = null;
-            Frame CurrFrame = (Frame)Window.Current.Content;
-            CurrFrame.Navigate(typeof(MainPage));
-
-            //sæt Logged In User i Session manager til null
-            //skift side til login siden
-            //Debug.WriteLine("We are ready to Implement LOGOUT!!");
+            SessionManager.Logout();
         }
 
         #endregion
@@ -76,11 +75,15 @@ namespace App8
         public List<User> CustomerList
         {
             get { return _customerList; }
+            set
+            {
+                _customerList = value; 
+            }
         }
 
         public void ShowCustomerInformation()
         {
-            DBManager.getManager().GetUsers();
+            //DBManager.getManager().GetUsers();
             Debug.WriteLine("We are ready to Implement Search funktion!!");
         }
 
@@ -90,6 +93,7 @@ namespace App8
         {
 
         }
+
         void RaisePropertyChanged(string prop)
         {
             if (PropertyChanged != null) { PropertyChanged(this, new PropertyChangedEventArgs(prop)); }

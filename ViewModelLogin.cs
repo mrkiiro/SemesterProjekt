@@ -18,28 +18,31 @@ namespace App8
     class ViewModelLogin : INotifyPropertyChanged
     {
         private string _loginUserName, _loginPassword;
-        private SessionManager mySession = SessionManager.GetManager();
         private readonly RelayCommand _loginCommand;
         private string message;
 
 
         public ViewModelLogin()
         {
-            SessionManager sm = SessionManager.GetManager();
             _loginCommand = new RelayCommand(Login);
             Message = "";
-            Debug.WriteLine(DBManager.getManager().getMovieByName("Peter Plys 5").title);
+            startDb();
         }
 
-        public void Login()
+        private async Task startDb()
+        {
+            await DBManager.initializeDatabase();
+        }
+
+        public async void Login()
         {
             User thisUser = new User(LoginUserName, LoginPassword);
-            if (SessionManager.Login(thisUser))
+            if (await SessionManager.GetManager().Login(thisUser))
             {
                 changeView();
             }
             //viser fejl i enten username eller password
-            if(DBManager.getUserByName(LoginUserName) != null)
+            if( await DBManager.getManager().getUserByName(LoginUserName) != null)
                 Message = "Fejl i password";
             else
             {

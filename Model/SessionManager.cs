@@ -5,6 +5,8 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 using App8.Model;
 
 namespace App8
@@ -24,13 +26,19 @@ namespace App8
             {
                 _myManager = new SessionManager();
             }
-
             return _myManager;
         }
 
-        public static bool Login(User u)
+        public static void Logout()
         {
-            List<User> users = DBManager.getManager().GetUsers();
+            loggedInUser = null;
+            Frame CurrFrame = (Frame)Window.Current.Content;
+            CurrFrame.Navigate(typeof(MainPage));
+        }
+
+        public async Task<bool> Login(User u)
+        {
+            List<User> users = await DBManager.getManager().GetUsers();
 
             bool UnameExist = false;
             bool PwordExist = false;
@@ -49,7 +57,7 @@ namespace App8
 
             if (UnameExist && PwordExist)
             {
-                loggedInUser = DBManager.getUserByName(u.UserName);
+                loggedInUser = await DBManager.getManager().getUserByName(u.UserName);
                 return true;
             }
             else if (UnameExist)
@@ -63,7 +71,5 @@ namespace App8
                 return false;
             }
         }
-
-
     }
 }

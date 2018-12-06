@@ -21,7 +21,8 @@ namespace App8
         private readonly RelayCommand _getMovies;
         private string _searchbar;
         private readonly RelayCommand _next;
-       
+        private ObservableCollection<Movie> _Film;
+
         public ViewModelAdmin()
         {
             _logOut = new RelayCommand(LogOut);
@@ -29,6 +30,17 @@ namespace App8
             _getMovies = new RelayCommand(GetMovies);
 
             _next = new RelayCommand(Next);
+            loadMovies();
+        }
+
+        public async Task loadMovies()
+        {
+            List<Movie> myMovies = await DBManager.getManager().GetMovies();
+            _Film = new ObservableCollection<Movie>();
+            foreach (var loadedMovie in myMovies)
+            {
+                _Film.Add(loadedMovie);
+            }
         }
 
         public RelayCommand LogOutCommand
@@ -42,11 +54,7 @@ namespace App8
 
         public void LogOut()
         {
-            Debug.WriteLine("Jeg kører log ud");
-            SessionManager.loggedInUser = null;
-            Frame CurrFrame = (Frame) Window.Current.Content;
-            CurrFrame.Navigate(typeof(MainPage));
-
+            SessionManager.Logout();
         }
 
         public void Next()
@@ -90,8 +98,6 @@ namespace App8
             CurrFrame.Navigate(typeof(MovieView));
 
         }
-
-        private ObservableCollection<Movie> _Film = DBManager.getManager().GetMovies();
 
 
 

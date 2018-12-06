@@ -26,9 +26,10 @@ namespace App8
             {
                 return (T)jsonSerializer.ReadObject(stream);
             }
+            
         }
 
-        public static async void Save(T objectToSave, string fileName)
+        public static async Task Save(T objectToSave, string fileName)
         {
             StorageFile jsonFile = await _folder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
             DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(T));
