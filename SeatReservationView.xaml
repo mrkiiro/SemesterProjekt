@@ -10,22 +10,22 @@
 
     <Grid>
         <Pivot>
-            <PivotItem Header="Reservation with Customer ticket details">
+            <PivotItem Header="Hall 1">
                 <Grid>
                     
                 </Grid>
             </PivotItem>
-            <PivotItem Header="Reservation w details">
+            <PivotItem Header="Hall 2">
                 <Grid>
 
                 </Grid>
             </PivotItem>
-            <PivotItem Header="Reservation withs">
+            <PivotItem Header="Hall 3">
                 <Grid>
 
                 </Grid>
             </PivotItem>
-            <PivotItem Header="Reservation wi">
+            <PivotItem Header="Hall 4">
                 <Grid>
 
                 </Grid>

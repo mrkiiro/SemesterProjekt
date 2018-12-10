@@ -42,7 +42,7 @@ namespace App8.Model
             };
             List<Customer> customers = new List<Customer>
             {
-                { new Customer("Inge1243","123456")},
+                { new Customer("c","c")},
                 { new Customer("AndersJensen", "makskodylt")}
             };
             List<Movie> movies = new List<Movie>

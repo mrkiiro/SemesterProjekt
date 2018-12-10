@@ -38,7 +38,7 @@
                     <TextBlock x:Name="Number" HorizontalAlignment="Left" Margin="765,263,0,0" TextWrapping="Wrap" Text="Number" VerticalAlignment="Top" Height="32" Width="215" FontSize="20"/>
                     <TextBlock HorizontalAlignment="Left" Margin="599,196,0,0" TextWrapping="Wrap" Text="Hall" VerticalAlignment="Top" Width="115" Height="32" FontSize="20"/>
                     <TextBlock HorizontalAlignment="Left" Margin="765,332,0,0" TextWrapping="Wrap" Text="Number" VerticalAlignment="Top" Height="32" RenderTransformOrigin="0.468,0.469" FontSize="20"/>
-                    <Button Content="Choose seats" HorizontalAlignment="Left" Margin="599,515,0,0" VerticalAlignment="Top" Height="39"/>
+                    <Button Content="Choose seats" HorizontalAlignment="Left" Margin="599,515,0,0" VerticalAlignment="Top" Height="39" Command="{Binding ChangeViewToSeatReservationCommand}"/>
                     <Button Content="Print" HorizontalAlignment="Left" Margin="765,515,0,0" VerticalAlignment="Top" FontSize="20"/>
                     <Button Content="Checkout" HorizontalAlignment="Left" Margin="876,515,0,0" VerticalAlignment="Top" FontSize="20"/>
 
@@ -62,7 +62,7 @@
                     <TextBlock HorizontalAlignment="Left" Margin="735,70,0,0" TextWrapping="Wrap" Text="Hall" VerticalAlignment="Top" Width="215" Height="32" FontSize="20"/>
                     <ListView HorizontalAlignment="Left" Height="145" Margin="735,129,0,0" VerticalAlignment="Top" Width="237">
                     </ListView>
-                    <Button Content="Change seats" HorizontalAlignment="Left" Margin="801,369,0,0" VerticalAlignment="Top" Width="171" Height="48" FontSize="20" Command="{Binding ChangeViewCommand}"/>
+                    <Button Content="Change seats" HorizontalAlignment="Left" Margin="801,369,0,0" VerticalAlignment="Top" Width="171" Height="48" FontSize="20" Command="{Binding ChangeViewToSeatReservationCommand}"/>
                 </Grid>
             </PivotItem>
         </Pivot>
