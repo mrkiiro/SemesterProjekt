@@ -16,10 +16,10 @@ namespace App8
     class ViewModelClerk : Page, INotifyPropertyChanged
     {
         private List<User> _customerList;
-        private readonly RelayCommand _ChangeViewToSeatReservation;
+        private readonly RelayCommand _changeViewToSeatReservation;
         public ViewModelClerk()
         {
-            _ChangeViewToSeatReservation = new RelayCommand(ChangeViewToSeatReservation);
+            _changeViewToSeatReservation = new RelayCommand(ChangeViewToSeatReservation);
             _logOut = new RelayCommand(LogOut);
             _showCustomerInformation = new RelayCommand(ShowCustomerInformation);
             getCustomers();
@@ -45,7 +45,7 @@ namespace App8
         }
         public RelayCommand ChangeViewToSeatReservationCommand
         {
-            get { return _ChangeViewToSeatReservation; }
+            get { return _changeViewToSeatReservation; }
         }
         #region Log out
 

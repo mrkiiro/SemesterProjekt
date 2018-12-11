@@ -133,6 +133,7 @@
     <Compile Include="SaveAndLoad.cs" />
     <Compile Include="ViewModelAdmin.cs" />
     <Compile Include="ViewModelLogin.cs" />
+    <Compile Include="ViewModelMainPage.cs" />
     <Compile Include="ViewModelMovie.cs" />
   </ItemGroup>
   <ItemGroup>

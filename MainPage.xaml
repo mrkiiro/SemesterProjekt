@@ -7,7 +7,21 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <local:ViewModelMainPage/>
+    </Page.DataContext>
     <Grid>
-        <Button Click="ButtonBase_OnClick"></Button>
+        <ListView>
+        </ListView><!-- SelectedItem="{Binding Movie, Mode=TwoWay}"-->
+            <Button Content="Button" Command="{Binding ChangeViewToLoginViewCommand}" Grid.Column="1" Margin="62,186,0,282"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
     </Grid>
 </Page>
