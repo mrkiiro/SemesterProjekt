@@ -20,7 +20,7 @@
                         <TextBlock Text="Choose movies you want to edit" Margin="10,158,-10,-158"/>
                         <TextBox PlaceholderText="Search for a movie..." TextWrapping="Wrap" Text="{Binding Searchbar}" Margin="0,99,0,-99"/>
                         <Button Content="Edit movie" Width="100" Height="40" HorizontalAlignment="Left" Margin="203,99,0,0" VerticalAlignment="Top" Command="{Binding GetMoviesCommand}" RenderTransformOrigin="2.745,-0.652"/>
-                    <ListView ItemsSource="{Binding Film}" Margin="10,200,-10,-200" >
+                    <ListView ItemsSource="{Binding Film}" Margin="10,200,-10,-200">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding title}"></TextBlock>
@@ -29,7 +29,6 @@
                     </ListView>
                     <Button Content="Log Out" Width="100" Height="40" HorizontalAlignment="Left" Margin="401,437,0,0" VerticalAlignment="Top" Command="{Binding LogOutCommand}"/>
                 </Grid>
-
 
             </PivotItem>
             <PivotItem Header="Edit Users">

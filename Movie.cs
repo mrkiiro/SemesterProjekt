@@ -22,7 +22,7 @@ namespace App8
         {
             _title = title;
             _room = room;
-            _time = DateTime.MaxValue;
+            _time = time;
         }
 
         public string title
@@ -37,11 +37,9 @@ namespace App8
             set { _room = value; }
 
         }
-
-        private DateTime Time
+        public DateTime Time
         {
             get { return _time; }
-            set { _time = DateTime.MaxValue; }
         }
 
     }

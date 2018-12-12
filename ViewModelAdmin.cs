@@ -22,7 +22,6 @@ namespace App8
         private string _searchbar;
         private readonly RelayCommand _next;
         private ObservableCollection<Movie> _Film;
-
         private ObservableCollection<Customer> _customers;
 
         public ViewModelAdmin()
@@ -49,8 +48,7 @@ namespace App8
         {
             get
             {
-                return _logOut; 
-                
+                return _logOut;   
             }
         }
 
@@ -100,8 +98,6 @@ namespace App8
             CurrFrame.Navigate(typeof(MovieView));
 
         }
-
-
 
         public event PropertyChangedEventHandler PropertyChanged;
 
