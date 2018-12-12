@@ -47,9 +47,9 @@ namespace App8.Model
             };
             List<Movie> movies = new List<Movie>
             {
-                {new Movie("Peter Plys 5", 2, DateTime.Today)},
-                {new Movie("Avengers 2", 1, DateTime.Today)},
-                {new Movie("Den her skal man ikke se", 3, DateTime.Today) },
+                {new Movie("En fortælling om hummeren", 2, DateTime.Today)},
+                {new Movie("Stakit, stativ, kasket", 1, DateTime.Today)},
+                {new Movie("Den her skal man ikke se", 3, DateTime.Today)},
                 {new Movie("En skodfilm", 5, DateTime.Today)},
                 {new Movie("En endnu værre film", 2, DateTime.Today) }
             };
