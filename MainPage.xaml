@@ -7,21 +7,22 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Image Source="../Assets/2017-05-07.png" Margin="10,0" />
     <Page.DataContext>
         <local:ViewModelMainPage/>
     </Page.DataContext>
-    <Grid>
+    <!--<Button Content="Login" Command="{Binding ChangeViewToLoginViewCommand}" Grid.Column="2" Margin="356,386,0,82" Grid.Row="1"/>-->
+    <!-- <Grid>
         <ListView>
-        </ListView><!-- SelectedItem="{Binding Movie, Mode=TwoWay}"-->
-            <Button Content="Button" Command="{Binding ChangeViewToLoginViewCommand}"/>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-    </Grid>
+        </ListView> SelectedItem="{Binding Movie, Mode=TwoWay}"
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition></ColumnDefinition>
+        <ColumnDefinition></ColumnDefinition>
+        <ColumnDefinition></ColumnDefinition>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+        <RowDefinition></RowDefinition>
+        <RowDefinition></RowDefinition>
+    </Grid.RowDefinitions>
+    </Grid>-->
 </Page>
