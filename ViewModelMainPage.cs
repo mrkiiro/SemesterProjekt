@@ -13,10 +13,10 @@ namespace App8
 {
     class ViewModelMainPage
     {
-        private readonly RelayCommand _changeViewToLoginView;
+        private RelayCommand _changeViewToLoginView;
         public ViewModelMainPage()
         {
-            RelayCommand _changeViewToLoginView = new RelayCommand(ChangeViewToLoginView);
+             _changeViewToLoginView = new RelayCommand(ChangeViewToLoginView);
             
         }
 

@@ -13,7 +13,7 @@
     <Grid>
         <ListView>
         </ListView><!-- SelectedItem="{Binding Movie, Mode=TwoWay}"-->
-            <Button Content="Button" Command="{Binding ChangeViewToLoginViewCommand}" Grid.Column="1" Margin="62,186,0,282"/>
+            <Button Content="Button" Command="{Binding ChangeViewToLoginViewCommand}"/>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
