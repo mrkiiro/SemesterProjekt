@@ -128,7 +128,7 @@ namespace App8.Model
         {
             return await SaveAndLoad<List<Movie>>.Load("MovieDB.json");
         }
-        
+
         public async Task<Movie> getMovieByName(string name)
         {
             List<Movie> movies = await GetMovies();
@@ -142,6 +142,6 @@ namespace App8.Model
             }
             return null;
         }
-        
+
     }
 }

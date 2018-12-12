@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="App8.SeatReservationView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App8"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Pivot>
+            <PivotItem Header="Hall 1">
+                <Grid>
+                    
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="Hall 2">
+                <Grid>
+
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="Hall 3">
+                <Grid>
+
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="Hall 4">
+                <Grid>
+
+                </Grid>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+
+</Page>

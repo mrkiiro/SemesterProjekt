@@ -16,14 +16,20 @@ namespace App8
     class ViewModelClerk : Page, INotifyPropertyChanged
     {
         private List<User> _customerList;
-
+        private readonly RelayCommand _changeViewToSeatReservation;
         public ViewModelClerk()
         {
+            _changeViewToSeatReservation = new RelayCommand(ChangeViewToSeatReservation);
             _logOut = new RelayCommand(LogOut);
             _showCustomerInformation = new RelayCommand(ShowCustomerInformation);
             getCustomers();
         }
 
+        public void ChangeViewToSeatReservation()
+        {
+            Frame CurrFrame = (Frame)Window.Current.Content;
+            CurrFrame.Navigate(typeof(SeatReservationView));
+        }
 
         private async void getCustomers()
         {
@@ -37,7 +43,10 @@ namespace App8
             _customerList = customer;
             RaisePropertyChanged("CustomerList");
         }
-
+        public RelayCommand ChangeViewToSeatReservationCommand
+        {
+            get { return _changeViewToSeatReservation; }
+        }
         #region Log out
 
         private readonly RelayCommand _logOut;
@@ -45,6 +54,7 @@ namespace App8
         {
             get { return _logOut; }
         }
+        
 
         public void LogOut()
         {

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using App8.Model;
 
 namespace App8
 {
@@ -18,6 +19,10 @@ namespace App8
         public ViewModelMovie()
         {
             _getMovies = new RelayCommand(GetMovies);
+        }
+        private async Task startDb()
+        {
+            await DBManager.initializeDatabase();
         }
 
         public RelayCommand GetMoviesCommand
