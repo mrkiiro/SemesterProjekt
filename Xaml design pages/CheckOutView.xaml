@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="App8.CheckOutView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App8"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="100,45,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" FontSize="20"/>
+        <TextBlock x:Name="PhoneNumberOfTheCustomer" HorizontalAlignment="Left" Margin="296,91,0,0" TextWrapping="Wrap" Text="Phone number of the customer" VerticalAlignment="Top" FontSize="20"/>
+        <TextBlock x:Name="NameOfTheCustomerTextBlock" HorizontalAlignment="Left" Margin="296,45,0,0" TextWrapping="Wrap" Text="Name Of the Customer" VerticalAlignment="Top" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="100,91,0,0" TextWrapping="Wrap" Text="Phone number" VerticalAlignment="Top" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="100,132,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Height="27" Width="131" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="296,132,0,0" TextWrapping="Wrap" Text="Email of the customer" VerticalAlignment="Top" Height="27" Width="204" FontSize="20"/>
+        <Button x:Name="PayWithCreditCardButton" Content="Credit Card" HorizontalAlignment="Left" Margin="628,120,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Button x:Name="PayWithCash" Content="Cash" HorizontalAlignment="Left" Margin="786,120,0,0" VerticalAlignment="Top" FontSize="20"/>
+    </Grid>
+</Page>

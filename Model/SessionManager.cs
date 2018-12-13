@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 using App8.Model;
 
 namespace App8
@@ -11,7 +14,7 @@ namespace App8
     class SessionManager
     {
         private static SessionManager _myManager;
-        public User loggedInUser;
+        public static User loggedInUser;
 
         private SessionManager()
         {
@@ -19,18 +22,23 @@ namespace App8
 
         public static SessionManager GetManager()
         {
-            if(_myManager == null)
+            if (_myManager == null)
             {
                 _myManager = new SessionManager();
             }
-
             return _myManager;
         }
 
-        public bool Login(User u)
+        public static void Logout()
         {
-            DBManager myDb = DBManager.getManager();
-            List<User> users = myDb.GetUsers();
+            loggedInUser = null;
+            Frame CurrFrame = (Frame)Window.Current.Content;
+            CurrFrame.Navigate(typeof(MainPage));
+        }
+
+        public async Task<bool> Login(User u)
+        {
+            List<User> users = await DBManager.getManager().GetUsers();
 
             bool UnameExist = false;
             bool PwordExist = false;
@@ -45,16 +53,11 @@ namespace App8
                 {
                     PwordExist = true;
                 }
-                Debug.WriteLine("Database contains: "+thisUser.UserName+", Pass: "+thisUser.Password);
             }
-            Debug.WriteLine("i tried with: "+u.UserName+" , pass: "+u.Password);
 
             if (UnameExist && PwordExist)
             {
-                //To do, kig på koden her under
-                this.loggedInUser = u;
-                Debug.WriteLine("User logged in: "+loggedInUser.UserName);
-                this.loggedInUser = DBManager.getManager().getUserByName(u.UserName);
+                loggedInUser = await DBManager.getManager().getUserByName(u.UserName);
                 return true;
             }
             else if (UnameExist)

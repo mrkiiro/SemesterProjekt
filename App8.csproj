@@ -92,7 +92,7 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AdminLogin.xaml.cs">
+    <Compile Include="Xaml design pages\AdminLogin.xaml.cs">
       <DependentUpon>AdminLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
@@ -102,9 +102,24 @@
       <DependentUpon>BookSite.xaml</DependentUpon>
     </Compile>
     <Compile Include="ClerkView.xaml.cs">
+    <Compile Include="Xaml design pages\CheckOutView.xaml.cs">
+      <DependentUpon>CheckOutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml design pages\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml design pages\SeatReservationView.xaml.cs">
+      <DependentUpon>SeatReservationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Viewmodels\ViewModelCheckOut.cs" />
+    <Compile Include="Xaml design pages\ClerkView.xaml.cs">
       <DependentUpon>ClerkView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.xaml.cs">
+    <Compile Include="Xaml design pages\CustomerView.xaml.cs">
+      <DependentUpon>CustomerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Customer.cs" />
+    <Compile Include="Xaml design pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Admin.cs" />
@@ -113,12 +128,22 @@
     <Compile Include="Model\DBManager.cs" />
     <Compile Include="Model\Sal.cs" />
     <Compile Include="Model\Seats.cs" />
+    <Compile Include="Model\Movie.cs" />
+    <Compile Include="Xaml design pages\MovieView.xaml.cs">
+      <DependentUpon>MovieView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\SessionManager.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="ViewModelBooking.cs" />
     <Compile Include="ViewModelLogin.cs" />
+    <Compile Include="Viewmodels\ViewModelClerk.cs" />
+    <Compile Include="Viewmodels\SaveAndLoad.cs" />
+    <Compile Include="Viewmodels\ViewModelAdmin.cs" />
+    <Compile Include="Viewmodels\ViewModelLogin.cs" />
+    <Compile Include="Viewmodels\ViewModelMainPage.cs" />
+    <Compile Include="Viewmodels\ViewModelMovie.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -127,6 +152,8 @@
     <None Include="App8_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\2017-05-07.png" />
+    <Content Include="Assets\BaggrundsBilledePopcorn.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -141,7 +168,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="AdminLogin.xaml">
+    <Page Include="Xaml design pages\AdminLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml design pages\CheckOutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml design pages\ClerkView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -150,12 +185,25 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ClerkView.xaml">
+    <Page Include="Xaml design pages\CustomerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainPage.xaml">
+    <Page Include="Xaml design pages\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml design pages\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Xaml design pages\MovieView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml design pages\SeatReservationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

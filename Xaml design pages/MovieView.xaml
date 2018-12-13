@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="App8.MovieView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App8"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <local:ViewModelMovie/>
+    </Page.DataContext>
+
+    <Grid RenderTransformOrigin="0.529,0.502">
+        <TextBlock HorizontalAlignment="Left" Margin="104,154,0,0" TextWrapping="Wrap" Text="Title" VerticalAlignment="Top" Height="40" Width="100"/>
+        <TextBlock HorizontalAlignment="Left" Margin="309,154,0,0" TextWrapping="Wrap" Text="Room" VerticalAlignment="Top" Height="40" Width="100"/>
+        <TextBlock HorizontalAlignment="Left" Margin="104,296,0,0" TextWrapping="Wrap" Text="Date" VerticalAlignment="Top" Height="40" Width="100"/>
+        <TextBlock HorizontalAlignment="Left" Margin="309,301,0,0" TextWrapping="Wrap" Text="Time" VerticalAlignment="Top" Height="40" Width="100"/>
+        <TextBlock HorizontalAlignment="Left" Margin="104,457,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="40" Width="100"/>
+
+        <TextBox HorizontalAlignment="Left" Margin="104,194,0,0" TextWrapping="Wrap" Text="{Binding Title}" VerticalAlignment="Top" Height="40" Width="100"/>
+        <TextBox HorizontalAlignment="Left" Margin="309,194,0,0" TextWrapping="Wrap" Text="{Binding Room}" VerticalAlignment="Top" Height="40" Width="100"/>
+        <TextBox HorizontalAlignment="Left" Margin="104,341,0,0" TextWrapping="Wrap" Text="{Binding Date}" VerticalAlignment="Top" Height="40" Width="100"/>
+        <TextBox HorizontalAlignment="Left" Margin="309,341,0,0" TextWrapping="Wrap" Text="{Binding Time}" VerticalAlignment="Top" Height="40" Width="100"/>
+        <TextBox HorizontalAlignment="Left" Margin="104,497,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="100"/>
+
+        <TextBox HorizontalAlignment="Left" Margin="578,194,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="100"/>
+        <TextBox HorizontalAlignment="Left" Margin="828,341,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="100"/>
+        <TextBox HorizontalAlignment="Left" Margin="828,194,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="100"/>
+        <TextBox HorizontalAlignment="Left" Margin="578,497,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="100"/>
+        <TextBox HorizontalAlignment="Left" Margin="578,341,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="100"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="578,149,0,0" TextWrapping="Wrap" Text="Title" VerticalAlignment="Top" Height="40" Width="100"/>
+        <TextBlock HorizontalAlignment="Left" Margin="828,154,0,0" TextWrapping="Wrap" Text="Room" VerticalAlignment="Top" Height="40" Width="100"/>
+        <TextBlock HorizontalAlignment="Left" Margin="578,296,0,0" TextWrapping="Wrap" Text="Date" VerticalAlignment="Top" Height="40" Width="100"/>
+        <TextBlock HorizontalAlignment="Left" Margin="828,301,0,0" TextWrapping="Wrap" Text="Time" VerticalAlignment="Top" Height="40" Width="100"/>
+        <TextBlock HorizontalAlignment="Left" Margin="578,457,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="40" Width="100"/>
+        <TextBlock HorizontalAlignment="Left" Margin="393,88,0,0" TextWrapping="Wrap" Text="Current movie data" VerticalAlignment="Top" Height="40" Width="100"/>
+        <TextBlock HorizontalAlignment="Left" Margin="910,88,0,0" TextWrapping="Wrap" Text="New movie data" VerticalAlignment="Top" Height="40" Width="100"/>
+
+        <Button Content="Save" HorizontalAlignment="Left" Margin="828,549,0,0" VerticalAlignment="Top" Height="40" Width="100" Command="{Binding}"/>
+
+    </Grid>
+</Page>
