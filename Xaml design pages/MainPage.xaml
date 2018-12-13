@@ -15,9 +15,8 @@
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="50*" />
-                <RowDefinition Height="50*" />
             </Grid.RowDefinitions>
-            <Button Content="Login" Command="{Binding ChangeViewToLoginViewCommand}"  Margin="948,212,0,172" Height="116" Width="193" Grid.Row="1" >
+            <Button Content="Login" Command="{Binding ChangeViewToLoginViewCommand}"  Margin="650,116,0,228" Height="656" Width="709" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Red" Offset="0.209"/>
