@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Media;
 using App8.Annotations;
 using App8.Model;
 
-namespace App8.Viewmodels
+namespace App8
 {
     class ViewModelBooking : INotifyPropertyChanged
     {
