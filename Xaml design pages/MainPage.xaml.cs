@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using App8.Xaml_design_pages;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -30,7 +31,7 @@ namespace App8
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
             Frame CurrFrame = (Frame)Window.Current.Content;
-            CurrFrame.Navigate(typeof(LoginView));
+            CurrFrame.Navigate(typeof(BookingView));
         }
     }
 }

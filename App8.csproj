@@ -92,11 +92,16 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Model\ButtonExtension.cs" />
+    <Compile Include="Model\Room.cs" />
+    <Compile Include="Viewmodels\ViewModelBooking.cs" />
     <Compile Include="Xaml design pages\AdminLogin.xaml.cs">
       <DependentUpon>AdminLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml design pages\BookingView.xaml.cs">
     </Compile>
     <Compile Include="Xaml design pages\CheckOutView.xaml.cs">
       <DependentUpon>CheckOutView.xaml</DependentUpon>
@@ -160,6 +165,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="Xaml design pages\AdminLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml design pages\BookingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
