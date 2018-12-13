@@ -98,6 +98,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ClerkView.xaml.cs">
     <Compile Include="Xaml design pages\CheckOutView.xaml.cs">
       <DependentUpon>CheckOutView.xaml</DependentUpon>
     </Compile>
@@ -121,14 +122,21 @@
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Clerk.cs" />
     <Compile Include="Model\DBManager.cs" />
+    <Compile Include="Model\Sal.cs" />
+<<<<<<< HEAD
+    <Compile Include="Model\Seats.cs" />
     <Compile Include="Model\Movie.cs" />
     <Compile Include="Xaml design pages\MovieView.xaml.cs">
       <DependentUpon>MovieView.xaml</DependentUpon>
     </Compile>
+=======
+>>>>>>> parent of 5729dcd... committing all changes
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\SessionManager.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="ViewModelBooking.cs" />
+    <Compile Include="ViewModelLogin.cs" />
     <Compile Include="Viewmodels\ViewModelClerk.cs" />
     <Compile Include="Viewmodels\SaveAndLoad.cs" />
     <Compile Include="Viewmodels\ViewModelAdmin.cs" />
@@ -171,6 +179,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Booking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ClerkView.xaml">
     <Page Include="Xaml design pages\CustomerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
