@@ -99,6 +99,8 @@
     <Compile Include="Model\show.cs" />
     <Compile Include="Viewmodels\ViewModelBooking.cs" />
     <Compile Include="Viewmodels\ViewModelCustomer.cs" />
+    <Compile Include="Viewmodels\ViewModelBooking.cs" />
+    <Compile Include="Viewmodels\ViewModelSeatReservation.cs" />
     <Compile Include="Xaml design pages\AdminLogin.xaml.cs">
       <DependentUpon>AdminLogin.xaml</DependentUpon>
     </Compile>
@@ -107,6 +109,8 @@
     </Compile>
     <Compile Include="Xaml design pages\BookingView.xaml.cs">
       <DependentUpon>BookingView.xaml</DependentUpon>
+    <Compile Include="Xaml design pages\BookingsView.xaml.cs">
+      <DependentUpon>BookingsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Xaml design pages\CheckOutView.xaml.cs">
       <DependentUpon>CheckOutView.xaml</DependentUpon>
@@ -174,6 +178,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Xaml design pages\BookingView.xaml">
+    <Page Include="Xaml design pages\BookingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

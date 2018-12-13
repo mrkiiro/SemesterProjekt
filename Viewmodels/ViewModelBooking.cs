@@ -64,6 +64,10 @@ namespace App8
         public void ButtonArrayGrid()
         {
             myRoom = new Room(8, 16);
+
+        public void ButtonArrayGrid()
+        {
+            myRoom = new Room(8,16);
             for (int i = 0; i < myRoom.Rows; i++)
             {
                 for (int j = 0; j < myRoom.Columns; j++)
@@ -75,12 +79,22 @@ namespace App8
                     ColumnDefinition cd = new ColumnDefinition();
                     cd.Width = new GridLength(50, GridUnitType.Pixel);
                     myGrid.ColumnDefinitions.Add(cd);
+
+                    ColumnDefinition cd = new ColumnDefinition();
+                    cd.Width = new GridLength(50, GridUnitType.Pixel);
+                    myGrid.ColumnDefinitions.Add(cd);
+
                     myButtons[i, j].Background = new SolidColorBrush(Colors.DarkGreen);
                     // Setting rows and columns for button arrays
                     Grid.SetRow(myButtons[i, j], i);
                     Grid.SetColumn(myButtons[i, j], j);
                     // Adding button array into our grid
                     myGrid.Children.Add(myButtons[i, j]);
+
+                    // Adding button array into our grid
+                    myGrid.Children.Add(myButtons[i, j]);
+
+
                     // Bool value to check if a button is true/false
                     if (myButtons[i, j].istaken)
                     {
@@ -96,6 +110,11 @@ namespace App8
                 }
             }
         }
+
+                }
+            }
+        }
+
         private RoutedEventHandler gridClicked(int i, int j)
         {
             return (btn, e) =>
@@ -116,6 +135,14 @@ namespace App8
             };
         }
         public event PropertyChangedEventHandler PropertyChanged;
+
+
+                // Debug.WriteLine("The button at row: "+(i+1)+", col"+(j+1)+" IsTaken = "+myButtons[i,j].istaken);
+            };
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
