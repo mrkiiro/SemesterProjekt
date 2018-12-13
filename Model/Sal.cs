@@ -8,33 +8,25 @@ namespace App8.Model
 {
     class Sal
     {
-        private int _rows;
-        private int _seats;
-        private string _name;
+        private int _rows, _columns;
+
         public int Rows
         {
             get { return _rows; }
             set { _rows = value; }
         }
 
-        public int Seats
+        public int Columns
         {
-            get { return _seats; }
-            set { _seats = value; }
-        }
-
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
+            get { return _columns; }
+            set { _columns = value; }
         }
 
 
-        public Sal(int rows, int seats, string name)
+        public Sal(int row, int column)
         {
-            this.Rows = rows;
-            this.Seats = seats;
-            this.Name = name;
+            _rows = row;
+            _columns = column;
         }
     }
 }
