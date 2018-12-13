@@ -29,23 +29,25 @@ namespace App8
             _loginCommand = new RelayCommand(Login);
             _registerCustomerCommand = new RelayCommand(Register);
             Message = "";
-            startDb();
+            //startDb();
         }
 
         public async void Register()
         {
             List<Customer> customers = await DBManager.getManager().loadCustomers();
+            Debug.WriteLine(RegUName);
 
             bool isUnameTaken = false;
             foreach (var thisCustomer in customers)
             {
                 if (thisCustomer.UserName == RegUName)
                 {
+                    Debug.WriteLine(RegUName + " and " + thisCustomer.UserName + " is the same");
                     isUnameTaken = true;
                     break;
                 }
             }
-
+            Debug.WriteLine(isUnameTaken + " for unameTaken");
             if (!isUnameTaken && RegUName != "")
             {
                 await DBManager.getManager().addCustomer(
