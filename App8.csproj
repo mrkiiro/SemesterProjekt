@@ -98,9 +98,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BookSite.xaml.cs">
-      <DependentUpon>BookSite.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ClerkView.xaml.cs">
     <Compile Include="Xaml design pages\CheckOutView.xaml.cs">
       <DependentUpon>CheckOutView.xaml</DependentUpon>
@@ -123,15 +120,17 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Admin.cs" />
-    <Compile Include="Model\ButtonExtension.cs" />
     <Compile Include="Model\Clerk.cs" />
     <Compile Include="Model\DBManager.cs" />
     <Compile Include="Model\Sal.cs" />
+<<<<<<< HEAD
     <Compile Include="Model\Seats.cs" />
     <Compile Include="Model\Movie.cs" />
     <Compile Include="Xaml design pages\MovieView.xaml.cs">
       <DependentUpon>MovieView.xaml</DependentUpon>
     </Compile>
+=======
+>>>>>>> parent of 5729dcd... committing all changes
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\SessionManager.cs" />
@@ -180,7 +179,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BookSite.xaml">
+    <Page Include="Booking.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

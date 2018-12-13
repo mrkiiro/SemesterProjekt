@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using App8.Annotations;
-using App8.Model;
 using GalaSoft.MvvmLight.Command;
 
 namespace App8
