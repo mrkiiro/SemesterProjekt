@@ -7,12 +7,32 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <!--<Image Source="../Assets/2017-05-07.png" Margin="10,0" /> -->
+    <!--<Image Grid.RowSpan="2" Stretch="None" Source="../Assets/2017-05-07.png" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,0"/>-->
+    <!--<Image Source="../Assets/2017-05-07.png" Margin="10,0" />
+    <TextBlock Content="TextBlock" Grid.Row="0" Height="28" ></TextBlock>-->
+    <Border Background="Navy">
+        <Grid>
+            <Grid.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="../Assets/BaggrundsBilledePopcorn.jpg" AlignmentY="Top" AlignmentX="Center"/>
+            </Grid.Background>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*" />
+            </Grid.RowDefinitions>
+            <Button Content="Login" Command="{Binding ChangeViewToLoginViewCommand}"  Margin="892,744,0,140" Height="116" Width="177" >
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="Blue"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </Grid>
+    </Border>
 
     <Page.DataContext>
         <local:ViewModelMainPage/>
     </Page.DataContext>
-    <Button Content="Login" Command="{Binding ChangeViewToLoginViewCommand}" Grid.Column="2" Margin="356,386,0,82" Grid.Row="1"/>
     <!-- <Grid>
         <ListView>
         </ListView> SelectedItem="{Binding Movie, Mode=TwoWay}"
