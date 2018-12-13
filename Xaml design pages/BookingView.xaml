@@ -19,7 +19,7 @@
                 <TextBox Text="{Binding TicketCount, Mode=TwoWay}"></TextBox>
             </StackPanel>
             <StackPanel x:Name="BookPanel" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Width="1000" Height="350">
-
+            <Button></Button>
             </StackPanel>
         </Grid>
 
