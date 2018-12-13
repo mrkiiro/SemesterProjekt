@@ -22,6 +22,8 @@ namespace App8
         private string _searchbar;
         private readonly RelayCommand _next;
         private ObservableCollection<Movie> _Film;
+        private ObservableCollection<Movie> DBMovies;
+
         private ObservableCollection<Customer> _customers;
 
         public ViewModelAdmin()
@@ -31,16 +33,18 @@ namespace App8
             _next = new RelayCommand(Next);
 
             _loadMovies();
+            _Film = new ObservableCollection<Movie>();
         }
 
         private async Task _loadMovies()
         {
             List<Movie> myMovies = await DBManager.getManager().GetMovies();
-            _Film = new ObservableCollection<Movie>();
+            DBMovies = new ObservableCollection<Movie>();
             foreach (var loadedMovie in myMovies)
             {
-                _Film.Add(loadedMovie);
+                DBMovies.Add(loadedMovie);
             }
+            _Film = DBMovies;
             OnPropertyChanged("Film");
         }
 
@@ -48,7 +52,7 @@ namespace App8
         {
             get
             {
-                return _logOut;   
+                return _logOut;
             }
         }
 
@@ -65,11 +69,34 @@ namespace App8
             CurrFrame.Navigate(typeof(MovieView));
         }
 
+        private void updateSearchList()
+        {
+            ObservableCollection<Movie> SortedList = new ObservableCollection<Movie>(DBMovies);
+
+            foreach (var movie in DBMovies)
+            {
+                for (int i = 0; i < Searchbar.Length; i++)
+                {
+                    if (Searchbar[i] != movie.title[i] && SortedList.Contains(movie))
+                    {
+                        SortedList.Remove(movie);
+                        break;
+                    }
+                }
+            }
+
+            Film = SortedList;
+            if (Searchbar == string.Empty)
+            {
+                Film = DBMovies;
+            }
+        }
+
         public RelayCommand NextCommand
         {
             get { return _next; }
         }
-        
+
         public RelayCommand GetMoviesCommand
         {
             get { return _getMovies; }
@@ -81,22 +108,24 @@ namespace App8
             set
             {
                 _searchbar = value;
-                OnPropertyChanged();
+                updateSearchList();
             }
         }
 
         public ObservableCollection<Movie> Film
         {
             get { return _Film; }
-            set { _Film = value; }
+            set
+            {
+                _Film = value;
+                OnPropertyChanged();
+            }
         }
 
         public void GetMovies()
         {
-            Debug.WriteLine("Jeg kører get movies");
             Frame CurrFrame = (Frame)Window.Current.Content;
             CurrFrame.Navigate(typeof(MovieView));
-
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
