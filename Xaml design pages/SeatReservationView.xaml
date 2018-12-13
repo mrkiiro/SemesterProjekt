@@ -7,30 +7,38 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Page.DataContext>
+        <local:ViewModelSeatReservation/>
+    </Page.DataContext>
+    
     <Grid>
         <Pivot>
-            <PivotItem Header="Hall 1">
-                <Grid>
-                    
-                </Grid>
-            </PivotItem>
-            <PivotItem Header="Hall 2">
-                <Grid>
+            <PivotItem Header="Main">
+                <Pivot>
+                    <PivotItem Header="Hall 1">
+                        <Grid>
 
-                </Grid>
-            </PivotItem>
-            <PivotItem Header="Hall 3">
-                <Grid>
+                        </Grid>
+                    </PivotItem>
+                    <PivotItem Header="Hall 2">
+                        <Grid>
 
-                </Grid>
-            </PivotItem>
-            <PivotItem Header="Hall 4">
-                <Grid>
+                        </Grid>
+                    </PivotItem>
+                    <PivotItem Header="Hall 3">
+                        <Grid>
 
-                </Grid>
+                        </Grid>
+                    </PivotItem>
+                    <PivotItem Header="Hall 4">
+                        <Grid>
+
+                        </Grid>
+                    </PivotItem>
+                </Pivot>
             </PivotItem>
         </Pivot>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="1285,10,0,0" VerticalAlignment="Top" FontSize="22" Command="{Binding ChangeViewBackToClerkViewCommand}"/>
     </Grid>
 
 </Page>

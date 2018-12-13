@@ -95,6 +95,7 @@
     <Compile Include="Model\ButtonExtension.cs" />
     <Compile Include="Model\Room.cs" />
     <Compile Include="Viewmodels\ViewModelBooking.cs" />
+    <Compile Include="Viewmodels\ViewModelSeatReservation.cs" />
     <Compile Include="Xaml design pages\AdminLogin.xaml.cs">
       <DependentUpon>AdminLogin.xaml</DependentUpon>
     </Compile>
