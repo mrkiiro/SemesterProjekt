@@ -13,24 +13,27 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace App8
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class BookingView : Page
     {
-        public MainPage()
+        public BookingView()
         {
             this.InitializeComponent();
-        }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
-        {
-            Frame CurrFrame = (Frame)Window.Current.Content;
-            CurrFrame.Navigate(typeof(BookingView));
+            ViewModelBooking b = new ViewModelBooking();
+            b.AddButtons();
+            b.myButtons[1, 1].istaken = true;
+            b.myButtons[1, 2].istaken = true;
+            b.myButtons[1, 3].istaken = true;
+            b.MyGrid = new Grid();
+            BookPanel.Children.Add(b.MyGrid);
+            b.ButtonArrayGrid();
         }
     }
 }

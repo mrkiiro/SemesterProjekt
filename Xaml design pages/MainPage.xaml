@@ -16,7 +16,15 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="50*" />
             </Grid.RowDefinitions>
-            <Button Content="Login" Command="{Binding ChangeViewToLoginViewCommand}"  Margin="650,116,0,228" Height="656" Width="709" >
+            <Button Content="Login" Command="{Binding ChangeViewToLoginViewCommand}"  Margin="650,116,0,228" Height="656" Width="709" Grid.Row="1" >
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Red" Offset="0.209"/>
+                        <GradientStop Color="#FFFDF200" Offset="0.723"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Content="BookingView" Click="ButtonBase_OnClick"  Margin="350,0,116,228" Height="356" Width="309"  Grid.Row="1" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Red" Offset="0.209"/>
