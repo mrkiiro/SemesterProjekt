@@ -71,28 +71,26 @@ namespace App8
 
         private void updateSearchList()
         {
-            ObservableCollection<Movie> SortedList = new ObservableCollection<Movie>();
+            ObservableCollection<Movie> SortedList = new ObservableCollection<Movie>(DBMovies);
 
-            for (int i = 0; i < Searchbar.Length; i++)
+            foreach (var movie in DBMovies)
             {
-                foreach (var movie in DBMovies)
+                for (int i = 0; i < Searchbar.Length; i++)
                 {
-                    if (Searchbar.Length <= movie.title.Length)
+                    if (Searchbar[i] != movie.title[i] && SortedList.Contains(movie))
                     {
-                        if (movie.title[i] == Searchbar[i] && !SortedList.Contains(movie))
-                        {
-                                SortedList.Add(movie);
-                        }
+                        SortedList.Remove(movie);
+                        break;
                     }
                 }
             }
 
             Film = SortedList;
-                if (Searchbar == string.Empty)
-                {
-                    Film = DBMovies;
-                }
+            if (Searchbar == string.Empty)
+            {
+                Film = DBMovies;
             }
+        }
 
         public RelayCommand NextCommand
         {
