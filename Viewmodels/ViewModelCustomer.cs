@@ -16,9 +16,9 @@ namespace App8.Viewmodels
 {
     class ViewModelCustomer : INotifyPropertyChanged
     {
-        private Grid _myGrid;
+        private GridView _myGrid;
 
-        public Grid MyGrid {
+        public GridView MyGrid {
             get { return _myGrid; }
             set
             {
@@ -29,11 +29,12 @@ namespace App8.Viewmodels
 
         public ViewModelCustomer()
         {
+            GridView mg = new GridView();
 
-            Sal mySal = new Sal(20,20);
-            MyGrid = new Grid();
+            mg.Background = new SolidColorBrush(Colors.Green);
+            //Sal mySal = new Sal(20,20);
 
-            
+            /*
             for (int x = 0; x < mySal.Cols; x++)
             {
                 MyGrid.ColumnDefinitions.Add(new ColumnDefinition());
@@ -51,19 +52,14 @@ namespace App8.Viewmodels
                 {
                     Button myBtn = new Button();
                     myBtn.Content = "someString";
-                    myBtn.Width = 200;
-                    myBtn.Height = 100;
 
                     Debug.WriteLine(MyGrid.Children.Count);
                     MyGrid.Children.Add(myBtn);
                 }
             }
-
-            MyGrid.Height = 800;
-            MyGrid.Width = 800;
             MyGrid.Background = new SolidColorBrush(Colors.DarkBlue);
+            */
         }
-
 
         public event PropertyChangedEventHandler PropertyChanged;
 

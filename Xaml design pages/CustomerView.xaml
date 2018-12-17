@@ -15,7 +15,6 @@
 
 
     <Grid>
-        <GridView HorizontalAlignment="Left" Margin="676,439,0,0" VerticalAlignment="Top" Width="615" ItemsSource="{Binding MyGrid, Mode=TwoWay}" Height="299"/>
-
+        <GridView HorizontalAlignment="Left" Margin="49,51,0,0" VerticalAlignment="Top" Width="1423" ItemsSource="{Binding MyGrid, Mode=TwoWay}" Height="911"/>
     </Grid>
 </Page>

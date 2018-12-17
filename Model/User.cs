@@ -16,8 +16,6 @@ namespace App8
         [DataMember]
         private string _userName;
         [DataMember]
-        private string _password;
-        [DataMember]
         protected internal int AcessLevel;
 
         public User(string username, string password)
