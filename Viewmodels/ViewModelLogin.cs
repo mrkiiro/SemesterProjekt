@@ -18,7 +18,7 @@ namespace App8
     class ViewModelLogin : INotifyPropertyChanged
     {
         private string _loginUserName, _loginPassword;
-        private readonly RelayCommand _loginCommand, _registerCustomerCommand, _changeViewToLoginView;
+        private readonly RelayCommand _loginCommand, _registerCustomerCommand;
         private string message;
 
         private string _regUName, _regPWord, _regPhone, _regEmail;
@@ -28,7 +28,6 @@ namespace App8
         {
             _loginCommand = new RelayCommand(Login);
             _registerCustomerCommand = new RelayCommand(Register);
-            _changeViewToLoginView = new RelayCommand(ChangeViewToLoginView);
             Message = "";
             //startDb();
         }
@@ -96,12 +95,6 @@ namespace App8
                     break;
             }
         }
-        public void ChangeViewToLoginView()
-        {
-            Debug.WriteLine("metoden kører");
-            Frame curr = (Frame)Window.Current.Content;
-            curr.Navigate(typeof(LoginView));
-        }
 
         public string LoginUserName
         {
@@ -126,11 +119,6 @@ namespace App8
         public RelayCommand LoginCommand
         {
             get { return _loginCommand; }
-        }
-
-        public RelayCommand ChangeViewToLoginViewCommand
-        {
-            get { return _changeViewToLoginView; }
         }
 
         public string Message

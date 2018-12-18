@@ -13,23 +13,6 @@ namespace App8
 {
     class ViewModelMainPage
     {
-        private RelayCommand _changeViewToLoginView;
-        public ViewModelMainPage()
-        {
-             _changeViewToLoginView = new RelayCommand(ChangeViewToLoginView);
-            
-        }
-
-        public void ChangeViewToLoginView()
-        {
-            Debug.WriteLine("metoden kører");
-            Frame curr = (Frame) Window.Current.Content;
-            curr.Navigate(typeof(LoginView));
-        }
-
-        public RelayCommand ChangeViewToLoginViewCommand
-        {
-            get { return _changeViewToLoginView; }
-        }
+        
     }
 }

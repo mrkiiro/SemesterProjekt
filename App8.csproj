@@ -112,8 +112,8 @@
     <Compile Include="Xaml design pages\CheckOutView.xaml.cs">
       <DependentUpon>CheckOutView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Xaml design pages\LoginView.xaml.cs">
-      <DependentUpon>LoginView.xaml</DependentUpon>
+    <Compile Include="Xaml design pages\MovieFrontPage.xaml.cs">
+      <DependentUpon>MovieFrontPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Xaml design pages\SeatReservationView.xaml.cs">
       <DependentUpon>SeatReservationView.xaml</DependentUpon>
@@ -193,13 +193,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Xaml design pages\LoginView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Xaml design pages\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Xaml design pages\MovieFrontPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Xaml design pages\MovieView.xaml">
       <SubType>Designer</SubType>
