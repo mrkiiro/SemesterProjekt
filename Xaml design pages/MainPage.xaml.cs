@@ -28,9 +28,9 @@ namespace App8
         {
             this.InitializeComponent();
             
-            App.Current.Resources["ButtonBackgroundPointerOver"] = new SolidColorBrush(Colors.Aqua);
-            App.Current.Resources["ButtonForegroundPointerOver"] = new SolidColorBrush(Colors.DarkBlue);
-            App.Current.Resources["ButtonBorderBrushPointerOver"] = new SolidColorBrush(Colors.DarkBlue);
+            App.Current.Resources["ButtonBackgroundPointerOver"] = new SolidColorBrush(Colors.LightGray);
+            App.Current.Resources["ButtonForegroundPointerOver"] = new SolidColorBrush(Colors.DarkSlateGray);
+            App.Current.Resources["ButtonBorderBrushPointerOver"] = new SolidColorBrush(Colors.DarkSlateGray);
 
         }
 
