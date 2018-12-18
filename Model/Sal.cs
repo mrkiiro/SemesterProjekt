@@ -8,27 +8,25 @@ namespace App8.Model
 {
     class Sal
     {
-        private Seat[,] seats;
-        public int Rows, Cols;
+        private int _rows;
+        private int _col;
 
-        public Sal(int rows, int cols)
+        public int Rows
         {
-            seats = new Seat[rows,cols];
-            for (int x = 0; x < rows; x++)
-            {
-                for (int y = 0; y < cols; y++)
-                {
-                    seats[x,y] = new Seat();
-                }
-            }
-
-            Rows = rows;
-            Cols = cols;
+            get { return _rows; }
+            set { _rows = value; }
         }
 
-        public bool reserveSeat(int x,int y)
+        public int Col
         {
-            return seats[x, y].reserve();
+            get { return _col; }
+            set { _col = value; }
+        }
+
+        public Sal(int row, int col)
+        {
+            _rows = row;
+            _col = col;
         }
     }
 }
