@@ -50,7 +50,7 @@ namespace App8
         {
             // Creating room size | Adding room soze to button array
             myRoom = new Room(8, 16);
-            myButtons = new ButtonExtension[myRoom.Rows, myRoom.Columns];
+            myButtons = new ButtonExtension[myRoom.Rows, myRoom.Rows];
             myButtons = new ButtonExtension[myRoom.Rows, myRoom.Col];
         }
 
@@ -58,7 +58,6 @@ namespace App8
         {
             for (int i = 0; i < myRoom.Rows; i++)
             {
-                for (int j = 0; j < myRoom.Columns; j++)
                 for (int j = 0; j < myRoom.Col; j++)
                 {
                     button = new ButtonExtension();
@@ -70,10 +69,6 @@ namespace App8
 
         public void ButtonArrayGrid()
         {
-            myRoom = new Room(8,16);
-            for (int i = 0; i < myRoom.Rows; i++)
-            {
-                for (int j = 0; j < myRoom.Columns; j++)
             myRoom = new Room(8, 16);
             for (int i = 0; i < myRoom.Rows; i++)
             {
@@ -102,12 +97,14 @@ namespace App8
                     {
                         // Change color if its taken to red, disabling the button
                         myButtons[i, j].IsEnabled = false;
-                        App.Current.Resources["SystemControlBackgroundBaseLowBrush"] = new SolidColorBrush(Colors.DarkRed);
+                        App.Current.Resources["SystemControlBackgroundBaseLowBrush"] =
+                            new SolidColorBrush(Colors.DarkRed);
                     }
                     else
                     {
                         myButtons[i, j].Background = new SolidColorBrush(Colors.DarkGreen);
-                        App.Current.Resources["ButtonBackgroundPointerOver"] = new SolidColorBrush(Colors.YellowGreen);
+                        App.Current.Resources["ButtonBackgroundPointerOver"] =
+                            new SolidColorBrush(Colors.YellowGreen);
                     }
 
                 }
@@ -123,15 +120,14 @@ namespace App8
                 if (myButtons[i, j].istaken)
                 {
                     myButtons[i, j].Background = new SolidColorBrush(Colors.Yellow);
-                    TicketCount++;
                     _ticketCount++;
                 }
                 else
                 {
                     myButtons[i, j].Background = new SolidColorBrush(Colors.DarkGreen);
-                    TicketCount--;
                     _ticketCount--;
                 }
+
                 Debug.WriteLine(TicketCount);
 
 
@@ -147,4 +143,7 @@ namespace App8
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
+
+
 }
+

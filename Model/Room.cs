@@ -8,7 +8,6 @@ namespace App8.Model
 {
     class Room
     {
-        private int _rows, _columns;
         private int _rows;
         private int _col;
 
@@ -18,17 +17,7 @@ namespace App8.Model
             set { _rows = value; }
         }
 
-        public int Columns
-        {
-            get { return _columns; }
-            set { _columns = value; }
-        }
 
-
-        public Room(int row, int column)
-        {
-            _rows = row;
-            _columns = column;
         public int Col
         {
             get { return _col; }

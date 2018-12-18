@@ -94,7 +94,6 @@
   <ItemGroup>
     <Compile Include="Model\ButtonExtension.cs" />
     <Compile Include="Model\Room.cs" />
-    <Compile Include="Viewmodels\ViewModelBooking.cs" />
     <Compile Include="Viewmodels\ViewModelSeatReservation.cs" />
     <Compile Include="Model\Sal.cs" />
     <Compile Include="Model\Seat.cs" />
