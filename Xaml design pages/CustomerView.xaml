@@ -5,11 +5,17 @@
     xmlns:local="using:App8"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodels="using:App8.Viewmodels"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <viewmodels:ViewModelCustomer />
+    </Page.DataContext>
+
+
 
     <Grid>
-        <TextBox HorizontalAlignment="Left" Margin="148,92,0,0" TextWrapping="Wrap" Text="Customer" VerticalAlignment="Top" Height="50" Width="111"/>
+        <GridView HorizontalAlignment="Left" Margin="676,439,0,0" VerticalAlignment="Top" Width="615" ItemsSource="{Binding MyGrid, Mode=TwoWay}" Height="299"/>
 
     </Grid>
 </Page>

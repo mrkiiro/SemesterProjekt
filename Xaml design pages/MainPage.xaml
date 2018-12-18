@@ -7,11 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Border Background="Navy">
-        <Grid>
-            <Grid.Background>
-                <ImageBrush Stretch="Uniform" ImageSource="../Assets/BaggrundsBilledePopcorn.jpg" AlignmentY="Top" AlignmentX="Center"/>
-            </Grid.Background>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="../Assets/BaggrundsBilledePopcorn.jpg" AlignmentY="Center" AlignmentX="Center"/>
+        </Grid.Background>
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="50*" />
@@ -38,21 +37,17 @@
             </Button>
         </Grid>
     </Border>
+        <Button Content="Login" Foreground="Aqua" BorderBrush="Aqua" Background="DarkBlue" Command="{Binding ChangeViewToLoginViewCommand}" HorizontalAlignment="Right" VerticalAlignment="Center" Height="50" Width="130" >
+        </Button>
+
+        <Button Content="Booking View" Foreground="Aqua" BorderThickness="2" BorderBrush="Aqua" Background="DarkBlue" Click="ButtonBase_OnClick" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="130" >
+        </Button>
+
+        <Button Content="Booking View" Foreground="Aqua" BorderThickness="2" BorderBrush="Aqua" Background="DarkBlue" Click="ButtonBase_OnClick" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="130" >
+        </Button>
+    </Grid>
 
     <Page.DataContext>
         <local:ViewModelMainPage/>
     </Page.DataContext>
-    <!-- <Grid>
-        <ListView>
-        </ListView> SelectedItem="{Binding Movie, Mode=TwoWay}"
-    <Grid.ColumnDefinitions>
-        <ColumnDefinition></ColumnDefinition>
-        <ColumnDefinition></ColumnDefinition>
-        <ColumnDefinition></ColumnDefinition>
-    </Grid.ColumnDefinitions>
-    <Grid.RowDefinitions>
-        <RowDefinition></RowDefinition>
-        <RowDefinition></RowDefinition>
-    </Grid.RowDefinitions>
-    </Grid>-->
 </Page>

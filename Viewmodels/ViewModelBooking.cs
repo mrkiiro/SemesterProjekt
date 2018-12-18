@@ -51,6 +51,7 @@ namespace App8
             // Creating room size | Adding room soze to button array
             myRoom = new Room(8, 16);
             myButtons = new ButtonExtension[myRoom.Rows, myRoom.Columns];
+            myButtons = new ButtonExtension[myRoom.Rows, myRoom.Col];
         }
 
         public void AddButtons()
@@ -58,6 +59,7 @@ namespace App8
             for (int i = 0; i < myRoom.Rows; i++)
             {
                 for (int j = 0; j < myRoom.Columns; j++)
+                for (int j = 0; j < myRoom.Col; j++)
                 {
                     button = new ButtonExtension();
                     button.Click += gridClicked(i, j);
@@ -72,6 +74,10 @@ namespace App8
             for (int i = 0; i < myRoom.Rows; i++)
             {
                 for (int j = 0; j < myRoom.Columns; j++)
+            myRoom = new Room(8, 16);
+            for (int i = 0; i < myRoom.Rows; i++)
+            {
+                for (int j = 0; j < myRoom.Col; j++)
                 {
                     // Styling grid with rows and columns and width
                     RowDefinition rd = new RowDefinition();
@@ -118,11 +124,13 @@ namespace App8
                 {
                     myButtons[i, j].Background = new SolidColorBrush(Colors.Yellow);
                     TicketCount++;
+                    _ticketCount++;
                 }
                 else
                 {
                     myButtons[i, j].Background = new SolidColorBrush(Colors.DarkGreen);
                     TicketCount--;
+                    _ticketCount--;
                 }
                 Debug.WriteLine(TicketCount);
 
@@ -140,4 +148,3 @@ namespace App8
         }
     }
 }
-

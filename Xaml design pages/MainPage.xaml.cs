@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -26,9 +27,20 @@ namespace App8
         public MainPage()
         {
             this.InitializeComponent();
+            
+            App.Current.Resources["ButtonBackgroundPointerOver"] = new SolidColorBrush(Colors.Aqua);
+            App.Current.Resources["ButtonForegroundPointerOver"] = new SolidColorBrush(Colors.DarkBlue);
+            App.Current.Resources["ButtonBorderBrushPointerOver"] = new SolidColorBrush(Colors.DarkBlue);
+
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            Frame CurrFrame = (Frame)Window.Current.Content;
+            CurrFrame.Navigate(typeof(BookingView));
+        }
+
+        private void ButtonBase_Movie_OnClick(object sender, RoutedEventArgs e)
         {
             Frame CurrFrame = (Frame)Window.Current.Content;
             CurrFrame.Navigate(typeof(BookingView));

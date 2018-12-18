@@ -9,6 +9,8 @@ namespace App8.Model
     class Room
     {
         private int _rows, _columns;
+        private int _rows;
+        private int _col;
 
         public int Rows
         {
@@ -27,6 +29,16 @@ namespace App8.Model
         {
             _rows = row;
             _columns = column;
+        public int Col
+        {
+            get { return _col; }
+            set { _col = value; }
+        }
+
+        public Room(int row, int col)
+        {
+            _rows = row;
+            _col = col;
         }
     }
 }
