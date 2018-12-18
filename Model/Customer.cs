@@ -18,6 +18,7 @@ namespace App8
         public Customer(string username, string password) : base(username, password)
         {
             base.AcessLevel = User.AcessLevels.Customer;
+            
         }
     }
 }
