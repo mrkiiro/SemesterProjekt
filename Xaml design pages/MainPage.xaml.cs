@@ -26,8 +26,7 @@ namespace App8
         public MainPage()
         {
             this.InitializeComponent();
-
-            Button b = new Button();
+            
             App.Current.Resources["ButtonBackgroundPointerOver"] = new SolidColorBrush(Colors.Aqua);
             App.Current.Resources["ButtonForegroundPointerOver"] = new SolidColorBrush(Colors.DarkBlue);
             App.Current.Resources["ButtonBorderBrushPointerOver"] = new SolidColorBrush(Colors.DarkBlue);
@@ -35,6 +34,12 @@ namespace App8
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            Frame CurrFrame = (Frame)Window.Current.Content;
+            CurrFrame.Navigate(typeof(BookingView));
+        }
+
+        private void ButtonBase_Movie_OnClick(object sender, RoutedEventArgs e)
         {
             Frame CurrFrame = (Frame)Window.Current.Content;
             CurrFrame.Navigate(typeof(BookingView));

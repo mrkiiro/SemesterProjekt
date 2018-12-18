@@ -7,18 +7,20 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid>
-            <Grid.Background>
-                <ImageBrush Stretch="Fill" ImageSource="../Assets/BaggrundsBilledePopcorn.jpg" AlignmentY="Center" AlignmentX="Center"/>
-            </Grid.Background>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="../Assets/BaggrundsBilledePopcorn.jpg" AlignmentY="Center" AlignmentX="Center"/>
+        </Grid.Background>
 
-            <Button Content="Login" Foreground="Aqua" BorderBrush="Aqua" Background="DarkBlue" Command="{Binding ChangeViewToLoginViewCommand}" HorizontalAlignment="Right" VerticalAlignment="Center" Height="50" Width="130" >
-                
-            </Button>
-            <Button Content="Booking View" Foreground="Aqua" BorderThickness="2" BorderBrush="Aqua" Background="DarkBlue" Click="ButtonBase_OnClick" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="130" >
-                
-            </Button>
-        </Grid>
+        <Button Content="Login" Foreground="Aqua" BorderBrush="Aqua" Background="DarkBlue" Command="{Binding ChangeViewToLoginViewCommand}" HorizontalAlignment="Right" VerticalAlignment="Center" Height="50" Width="130" >
+        </Button>
+
+        <Button Content="Booking View" Foreground="Aqua" BorderThickness="2" BorderBrush="Aqua" Background="DarkBlue" Click="ButtonBase_OnClick" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="130" >
+        </Button>
+
+        <Button Content="Booking View" Foreground="Aqua" BorderThickness="2" BorderBrush="Aqua" Background="DarkBlue" Click="ButtonBase_OnClick" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="130" >
+        </Button>
+    </Grid>
 
     <Page.DataContext>
         <local:ViewModelMainPage/>
