@@ -92,9 +92,12 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Model\ButtonExtension.cs" />
+    <Compile Include="Model\Room.cs" />
     <Compile Include="Model\Sal.cs" />
     <Compile Include="Model\Seat.cs" />
     <Compile Include="Model\show.cs" />
+    <Compile Include="Viewmodels\ViewModelBooking.cs" />
     <Compile Include="Viewmodels\ViewModelCustomer.cs" />
     <Compile Include="Xaml design pages\AdminLogin.xaml.cs">
       <DependentUpon>AdminLogin.xaml</DependentUpon>

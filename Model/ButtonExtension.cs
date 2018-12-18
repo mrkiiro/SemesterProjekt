@@ -9,11 +9,11 @@ namespace App8.Model
 {
     class ButtonExtension : Button
     {
-        private bool isTaken;
-        public bool IsTaken
+        public bool istaken;
+
+        public ButtonExtension()
         {
-            get { return isTaken; }
-            set { isTaken = value; }
+            istaken = false;
         }
     }
 }
