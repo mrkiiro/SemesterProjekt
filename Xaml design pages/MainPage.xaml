@@ -10,26 +10,31 @@
     <Grid>
 
         <Grid.Background>
-            <ImageBrush Stretch="UniformToFill" ImageSource="../Assets/cinema_bg.jpg" AlignmentY="Center" AlignmentX="Center"/>
+            <ImageBrush Stretch="UniformToFill" ImageSource="../Assets/_downloadfiles_wallpapers_2560_1600_avatar_mountains_9141.jpg" AlignmentY="Bottom" AlignmentX="Right"/>
         </Grid.Background>
-
-        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="350" Width="330" Padding="20" BorderBrush="DarkSlateGray" BorderThickness="5">
+    
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="350" Width="330" Padding="20" BorderBrush="DarkSlateGray" BorderThickness="8">
             <Grid.Background>
                 <SolidColorBrush Color="LightGray" Opacity="0.80"></SolidColorBrush>
                 
             </Grid.Background>
             
             
-            <TextBlock Text="Welcome to our &#x0a; Cinema Booking App!" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="DarkSlateGray" FontWeight="Bold" TextAlignment="Center" FontSize="26" />
+            <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="DarkSlateGray" FontWeight="Normal" TextAlignment="Center" FontSize="26" >
+                Welcome to our <LineBreak />
+                <Bold>C</Bold>inema <Bold>B</Bold>ooking <Bold>A</Bold>pp!
+            </TextBlock>
 
             <TextBlock Text="To navigate through the app  &#x0a;press one of the links below" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="DarkSlateGray" FontWeight="Bold" TextAlignment="Center" FontSize="18" Margin="0,100,0,0" />
 
-            <Button Content="See what to watch" Foreground="LightGray" BorderThickness="2" BorderBrush="DarkSlateGray" Background="DarkSlateGray" Click="ButtonBase_OnClick" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="50" Width="280" Margin="0,0,0,70" FontWeight="Bold" />
+            <Button Content="What to watch?" Foreground="LightGray" BorderThickness="2" BorderBrush="DarkSlateGray" Background="DarkSlateGray" Click="ButtonBase_OnClick" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="50" Width="274" Margin="0,0,0,70" FontWeight="Bold" />
 
             <Button Content="Register" Foreground="LightGray" BorderThickness="2" BorderBrush="DarkSlateGray" Background="DarkSlateGray" Click="ButtonBase_OnClick" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="50" Width="130" FontWeight="Bold" />
 
             <Button Content="Login" Foreground="LightGray" BorderBrush="DarkSlateGray" Background="DarkSlateGray" Command="{Binding ChangeViewToLoginViewCommand}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="50" Width="130" FontWeight="Bold" />
         </Grid>
+
+        
         
 
 
