@@ -8,39 +8,56 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid>
-
         <Grid.Background>
             <ImageBrush Stretch="UniformToFill" ImageSource="../Assets/_downloadfiles_wallpapers_2560_1600_avatar_mountains_9141.jpg" AlignmentY="Bottom" AlignmentX="Right"/>
         </Grid.Background>
     
-        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="350" Width="330" Padding="20" BorderBrush="DarkSlateGray" BorderThickness="8">
+        <Grid x:Name="Welcome_Box" HorizontalAlignment="Center" VerticalAlignment="Center" Height="350" Width="330" Padding="20" BorderBrush="DarkSlateGray" BorderThickness="8">
             <Grid.Background>
                 <SolidColorBrush Color="LightGray" Opacity="0.80"></SolidColorBrush>
-                
             </Grid.Background>
-            
-            
             <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="DarkSlateGray" FontWeight="Normal" TextAlignment="Center" FontSize="26" >
                 Welcome to our <LineBreak />
                 <Bold>C</Bold>inema <Bold>B</Bold>ooking <Bold>A</Bold>pp!
             </TextBlock>
-
             <TextBlock Text="To navigate through the app  &#x0a;press one of the links below" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="DarkSlateGray" FontWeight="Bold" TextAlignment="Center" FontSize="18" Margin="0,100,0,0" />
-
             <Button Content="What to watch?" Foreground="LightGray" BorderThickness="2" BorderBrush="DarkSlateGray" Background="DarkSlateGray" Click="ButtonBase_OnClick" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="50" Width="274" Margin="0,0,0,70" FontWeight="Bold" />
-
-            <Button Content="Register" Foreground="LightGray" BorderThickness="2" BorderBrush="DarkSlateGray" Background="DarkSlateGray" Click="ButtonBase_OnClick" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="50" Width="130" FontWeight="Bold" />
-
-            <Button Content="Login" Foreground="LightGray" BorderBrush="DarkSlateGray" Background="DarkSlateGray" Command="{Binding ChangeViewToLoginViewCommand}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="50" Width="130" FontWeight="Bold" />
+            <Button Content="Register" Foreground="LightGray" BorderThickness="2" BorderBrush="DarkSlateGray" Background="DarkSlateGray" Click="ButtonBase_OnClick2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="50" Width="130" FontWeight="Bold" />
+            <Button Content="Login" Foreground="LightGray" BorderBrush="DarkSlateGray" Background="DarkSlateGray" Click="ButtonBase_OnClick" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="50" Width="130" FontWeight="Bold" />
         </Grid>
 
-        
-        
+        <Grid x:Name="Login_Box" HorizontalAlignment="Center" VerticalAlignment="Center" Height="300" Width="330" Padding="20" BorderBrush="DarkSlateGray" BorderThickness="8">
+            <Grid.Background>
+                <SolidColorBrush Color="LightGray" Opacity="0.80"></SolidColorBrush>
+            </Grid.Background>
+
+            <Button x:Name="Close_Login" Click="Close_Box_OnClick_OnClick" Content="X" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="00,00,00,210" FontWeight="Bold"/>
+            <TextBox x:Name="LoginUserNameTextBox" PlaceholderText="Username" HorizontalAlignment="Center" Margin="0,50,0,0" TextWrapping="Wrap" Text="{Binding LoginUserName, Mode=TwoWay}"  VerticalAlignment="Top" Height="50" Width="274" />
+            <PasswordBox x:Name="LoginPasswordTextBox" PlaceholderText="Password" HorizontalAlignment="Center" Margin="0,115,0,0" Password="{Binding LoginPassword, Mode=TwoWay}"  VerticalAlignment="Top" FontSize="16" Height="50" Width="274" />
+            <Button x:Name="LoginButton" Content="Sign in" HorizontalAlignment="Right" Margin="0,194,0,0" VerticalAlignment="Top" FontSize="18" Command="{Binding LoginCommand}" Height="50" Width="127" BorderBrush="DarkSlateGray" Foreground="LightGray" Background="DarkSlateGray" FontWeight="Bold" />
+        </Grid>
+
+        <Grid x:Name="Register_Box" HorizontalAlignment="Center" VerticalAlignment="Center" Height="470" Width="330" Padding="20" BorderBrush="DarkSlateGray" BorderThickness="8">
+            <Grid.Background>
+                <SolidColorBrush Color="LightGray" Opacity="0.80"></SolidColorBrush>
+            </Grid.Background>
+            <Button x:Name="Close_Register" Click="Close_Box_OnClick_OnClick" Content="X" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="00,00,00,310" FontWeight="Bold"/>
+            <TextBlock HorizontalAlignment="Left" Margin="752,200,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Height="50" Width="124" FontSize="20"/>
+
+            <TextBox x:Name="RegisterUserNameTextBox" PlaceholderText="Username" HorizontalAlignment="Center"  TextWrapping="Wrap" Text="{Binding RegUName, Mode=TwoWay}" VerticalAlignment="Top" Height="50" Width="274" Margin="0,90,0,0" />
+            <TextBox x:Name="RegisterPasswordTextBox" PlaceholderText="Password" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding RegPWord,Mode=TwoWay}" VerticalAlignment="Top" Height="50" Width="274" Margin="0,155,0,0" />
+            <TextBox x:Name="RegisterPhoneNumberTextBox" PlaceholderText="Phone Number" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding RegPhone, Mode=TwoWay}" VerticalAlignment="Top" Height="50" Width="274" Margin="0,220,0,0" />
+            <TextBox x:Name="RegisterEmailTextBox" PlaceholderText="E-mail" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding RegEmail, Mode=TwoWay}" VerticalAlignment="Top" Height="50" Width="274" Margin="0,285,0,0" />
+            <Button x:Name="RegisterButton" Command="{Binding RegisterCustomerCommand}" Content="Register" HorizontalAlignment="Center" VerticalAlignment="Top" Height="50" Width="274" FontSize="18" Margin="0,350,0,0" />
+            <TextBlock Text="{Binding Message}" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  Margin="0,45,0,0" Height="50" Width="220" />
+        </Grid>
+
+
 
 
     </Grid>
 
     <Page.DataContext>
-        <local:ViewModelMainPage/>
+        <local:ViewModelLogin/>
     </Page.DataContext>
 </Page>

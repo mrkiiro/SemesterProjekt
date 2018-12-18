@@ -34,18 +34,39 @@ namespace App8
             App.Current.Resources["ButtonForegroundPointerOver"] = new SolidColorBrush(Colors.DarkSlateGray);
             App.Current.Resources["ButtonBorderBrushPointerOver"] = new SolidColorBrush(Colors.DarkSlateGray);
 
+            Login_Box.Visibility = Visibility.Collapsed;
+            Register_Box.Visibility = Visibility.Collapsed;
+
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            Frame CurrFrame = (Frame)Window.Current.Content;
-            CurrFrame.Navigate(typeof(BookingView));
+            // Opens Login Box
+            Login_Box.Visibility = Visibility.Visible;
+            Welcome_Box.Visibility = Visibility.Collapsed;
+            Register_Box.Visibility = Visibility.Collapsed;
         }
 
         private void ButtonBase_Movie_OnClick(object sender, RoutedEventArgs e)
         {
             Frame CurrFrame = (Frame)Window.Current.Content;
             CurrFrame.Navigate(typeof(BookingView));
+        }
+
+        private void Close_Box_OnClick_OnClick(object sender, RoutedEventArgs e)
+        {
+            // Opens Welcome Box again
+            Welcome_Box.Visibility = Visibility.Visible;
+            Login_Box.Visibility = Visibility.Collapsed;
+            Register_Box.Visibility = Visibility.Collapsed;
+        }
+
+        private void ButtonBase_OnClick2(object sender, RoutedEventArgs e)
+        {
+            // Opens Register Box
+            Register_Box.Visibility = Visibility.Visible;
+            Welcome_Box.Visibility = Visibility.Collapsed;
+            Login_Box.Visibility = Visibility.Collapsed;
         }
     }
 }
