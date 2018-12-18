@@ -30,7 +30,7 @@ namespace App8
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
             Frame CurrFrame = (Frame)Window.Current.Content;
-            CurrFrame.Navigate(typeof(LoginView));
+            CurrFrame.Navigate(typeof(BookingView));
         }
     }
 }
