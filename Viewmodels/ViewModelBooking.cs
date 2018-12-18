@@ -117,12 +117,12 @@ namespace App8
                 if (myButtons[i, j].istaken)
                 {
                     myButtons[i, j].Background = new SolidColorBrush(Colors.Yellow);
-                    TicketCount++;
+                    _ticketCount++;
                 }
                 else
                 {
                     myButtons[i, j].Background = new SolidColorBrush(Colors.DarkGreen);
-                    TicketCount--;
+                    _ticketCount--;
                 }
                 Debug.WriteLine(TicketCount);
 

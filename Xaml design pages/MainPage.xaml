@@ -7,48 +7,20 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Border Background="Navy">
         <Grid>
             <Grid.Background>
-                <ImageBrush Stretch="Uniform" ImageSource="../Assets/BaggrundsBilledePopcorn.jpg" AlignmentY="Top" AlignmentX="Center"/>
+                <ImageBrush Stretch="Fill" ImageSource="../Assets/BaggrundsBilledePopcorn.jpg" AlignmentY="Center" AlignmentX="Center"/>
             </Grid.Background>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50*" />
-            </Grid.RowDefinitions>
-            <Button Content="Login" Command="{Binding ChangeViewToLoginViewCommand}"  Margin="650,116,0,228" Height="656" Width="709" >
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Red" Offset="0.209"/>
-                        <GradientStop Color="#FFFDF200" Offset="0.723"/>
-                    </LinearGradientBrush>
-                </Button.Background>
+            <Button Content="Login" Foreground="Aqua" BorderBrush="Aqua" Background="DarkBlue" Command="{Binding ChangeViewToLoginViewCommand}" HorizontalAlignment="Right" VerticalAlignment="Center" Height="50" Width="130" >
+                
             </Button>
-            <Button Content="Booking View" Margin="350,416,0,228" Click="ButtonBase_OnClick" Height="356" Width="309" >
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Red" Offset="0.209"/>
-                        <GradientStop Color="#FFFDF200" Offset="0.723"/>
-                    </LinearGradientBrush>
-                </Button.Background>
+            <Button Content="Booking View" Foreground="Aqua" BorderThickness="2" BorderBrush="Aqua" Background="DarkBlue" Click="ButtonBase_OnClick" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="130" >
+                
             </Button>
         </Grid>
-    </Border>
 
     <Page.DataContext>
         <local:ViewModelMainPage/>
     </Page.DataContext>
-    <!-- <Grid>
-        <ListView>
-        </ListView> SelectedItem="{Binding Movie, Mode=TwoWay}"
-    <Grid.ColumnDefinitions>
-        <ColumnDefinition></ColumnDefinition>
-        <ColumnDefinition></ColumnDefinition>
-        <ColumnDefinition></ColumnDefinition>
-    </Grid.ColumnDefinitions>
-    <Grid.RowDefinitions>
-        <RowDefinition></RowDefinition>
-        <RowDefinition></RowDefinition>
-    </Grid.RowDefinitions>
-    </Grid>-->
 </Page>

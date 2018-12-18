@@ -11,6 +11,15 @@
         <local:ViewModelBooking />
     </Page.DataContext>
     <Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="1000" Height="500">
+            <StackPanel Width="1000" Height="150" VerticalAlignment="Top">
+                <TextBlock Text="Book seats for #@BindingMovie !" HorizontalAlignment="Center" FontSize="40"/>
+                <TextBlock x:Name="TicketCounter" Text="{Binding TicketCount, Mode=TwoWay}"></TextBlock>
+            </StackPanel>
+            <StackPanel x:Name="BookPanel" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Width="1000" Height="350">
+            
+            </StackPanel>
+        </Grid>
 
     </Grid>
 </Page>

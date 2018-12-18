@@ -25,6 +25,25 @@ namespace App8
         public BookingView()
         {
             this.InitializeComponent();
+
+            // Calling our viewmodel to access methods etc...
+            ViewModelBooking b = new ViewModelBooking();
+            b.AddButtons();
+
+            b.myButtons[1, 1].istaken = true;
+            b.myButtons[1, 2].istaken = true;
+            b.myButtons[1, 3].istaken = true;
+
+            // New instance of the grid | Adding new grid to stackpanel
+            b.MyGrid = new Grid();
+            BookPanel.Children.Add(b.MyGrid);
+
+            //
+            b.ButtonArrayGrid();
+
+
+            b.Tb = TicketCounter;
+            TicketCounter.Text = "" + b.TicketCount;
         }
     }
 }
