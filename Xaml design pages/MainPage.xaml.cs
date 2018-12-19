@@ -68,5 +68,11 @@ namespace App8
             Welcome_Box.Visibility = Visibility.Collapsed;
             Login_Box.Visibility = Visibility.Collapsed;
         }
+
+        private void ButtonBase3_OnClick(object sender, RoutedEventArgs e)
+        {
+            Frame CurrFrame = (Frame)Window.Current.Content;
+            CurrFrame.Navigate(typeof(MovieFrontPage));
+        }
     }
 }

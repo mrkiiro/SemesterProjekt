@@ -24,7 +24,7 @@
                 <Bold>C</Bold>inema <Bold>B</Bold>ooking <Bold>A</Bold>pp!
             </TextBlock>
             <TextBlock Text="To navigate through the app  &#x0a;press one of the links below" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="DarkSlateGray" FontWeight="Bold" TextAlignment="Center" FontSize="18" Margin="0,100,0,0" />
-            <Button Content="What to watch?" Foreground="LightGray" BorderThickness="2" BorderBrush="DarkSlateGray" Background="DarkSlateGray" Click="ButtonBase_OnClick" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="50" Width="274" Margin="0,0,0,70" FontWeight="Bold" />
+            <Button Content="What to watch?" Foreground="LightGray" BorderThickness="2" BorderBrush="DarkSlateGray" Background="DarkSlateGray" Click="ButtonBase3_OnClick" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="50" Width="274" Margin="0,0,0,70" FontWeight="Bold" />
             <Button Content="Register" Foreground="LightGray" BorderThickness="2" BorderBrush="DarkSlateGray" Background="DarkSlateGray" Click="ButtonBase_OnClick2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="50" Width="130" FontWeight="Bold" />
             <Button Content="Login" Foreground="LightGray" BorderBrush="DarkSlateGray" Background="DarkSlateGray" Click="ButtonBase_OnClick" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="50" Width="130" FontWeight="Bold" />
         </Grid>
