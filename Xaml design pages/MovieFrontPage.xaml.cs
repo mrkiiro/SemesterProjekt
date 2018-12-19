@@ -27,5 +27,11 @@ namespace App8
         {
             this.InitializeComponent();
         }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            Frame CurrFrame = (Frame)Window.Current.Content;
+            CurrFrame.Navigate(typeof(BookingView));
+        }
     }
 }

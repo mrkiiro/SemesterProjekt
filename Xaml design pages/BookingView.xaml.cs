@@ -41,9 +41,7 @@ namespace App8
             //
             b.ButtonArrayGrid();
 
-
-            b.Tb = TicketCounter;
-            TicketCounter.Text = "" + b.TicketCount;
+            TicketCounter.Text = Convert.ToString(b.TicketCount);
         }
     }
 }
