@@ -29,7 +29,11 @@ namespace App8
             _loginCommand = new RelayCommand(Login);
             _registerCustomerCommand = new RelayCommand(Register);
             Message = "";
-            //startDb();
+
+            // This would normally be outcommented, but since you start the project
+            // on a new PC, it wont have the JSON files needed for logging in etc.
+            //
+            startDb();
         }
 
         public async void Register()
