@@ -33,5 +33,10 @@ namespace App8
             Frame CurrFrame = (Frame)Window.Current.Content;
             CurrFrame.Navigate(typeof(BookingView));
         }
+        private void ButtonBase2_OnClick(object sender, RoutedEventArgs e)
+        {
+            Frame CurrFrame = (Frame)Window.Current.Content;
+            CurrFrame.Navigate(typeof(MainPage));
+        }
     }
 }

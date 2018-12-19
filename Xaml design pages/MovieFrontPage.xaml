@@ -10,12 +10,13 @@
     <Page.DataContext>
         <local:ViewModelMovie></local:ViewModelMovie>
     </Page.DataContext>
-    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Top" MinHeight="300" Width="500">
+        <Button Content="Back to Welcome Page" HorizontalAlignment="Center" VerticalAlignment="Top" Background="White" BorderBrush="DarkSlateGray" Foreground="DarkSlateGray" Padding="10" Margin="0,60,0,0" Click="ButtonBase2_OnClick" />
 
-    <TextBlock Text="See our incredible movie list!" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" FontSize="26" /> 
-        <StackPanel Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Top" Background="LightGray" Margin="0,100,0,0" >
-            <Button Content="See booking" HorizontalAlignment="Center" VerticalAlignment="Top" Background="DarkSlateGray" BorderBrush="DarkSlateGray" Foreground="LightGray" Padding="10" Margin="10,0,10,20" Click="ButtonBase_OnClick" />
-            <ListView ItemsSource="{Binding Movies, Mode=TwoWay}" Padding="10">
+        <StackPanel Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Top" Background="LightGray" Margin="0,150,0,0" >
+            <TextBlock Text="See our incredible movie list!" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" FontSize="26" Padding="30" />
+            <Button Content="See booking" HorizontalAlignment="Center" VerticalAlignment="Top" Background="DarkSlateGray" BorderBrush="DarkSlateGray" Foreground="LightGray" Padding="10" Margin="10,0,10,30" Click="ButtonBase_OnClick" />
+            <ListView ItemsSource="{Binding Movies, Mode=TwoWay}" Padding="30" Height="Auto" Width="Auto">
                 <ListView.ItemTemplate >
                     <DataTemplate>
                         <!-- 'styler' elementer i listen -->
