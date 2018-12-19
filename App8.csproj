@@ -144,7 +144,6 @@
     <Compile Include="Viewmodels\SaveAndLoad.cs" />
     <Compile Include="Viewmodels\ViewModelAdmin.cs" />
     <Compile Include="Viewmodels\ViewModelLogin.cs" />
-    <Compile Include="Viewmodels\ViewModelMainPage.cs" />
     <Compile Include="Viewmodels\ViewModelMovie.cs" />
   </ItemGroup>
   <ItemGroup>

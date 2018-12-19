@@ -33,7 +33,7 @@
             <Grid.Background>
                 <SolidColorBrush Color="LightGray" Opacity="0.80"></SolidColorBrush>
             </Grid.Background>
-
+            <TextBlock Text="{Binding Message}" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  Margin="5,5,0,0" Height="50" Width="220" Foreground="Red" FontWeight="SemiBold" />
             <Button x:Name="Close_Login" Click="Close_Box_OnClick_OnClick" Content="X" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="00,00,00,210" FontWeight="Bold"/>
             <TextBox x:Name="LoginUserNameTextBox" PlaceholderText="Username" HorizontalAlignment="Center" Margin="0,50,0,0" TextWrapping="Wrap" Text="{Binding LoginUserName, Mode=TwoWay}"  VerticalAlignment="Top" Height="50" Width="274" />
             <PasswordBox x:Name="LoginPasswordTextBox" PlaceholderText="Password" HorizontalAlignment="Center" Margin="0,115,0,0" Password="{Binding LoginPassword, Mode=TwoWay}"  VerticalAlignment="Top" FontSize="16" Height="50" Width="274" />
@@ -52,7 +52,7 @@
             <TextBox x:Name="RegisterPhoneNumberTextBox" PlaceholderText="Phone Number" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding RegPhone, Mode=TwoWay}" VerticalAlignment="Top" Height="50" Width="274" Margin="0,220,0,0" />
             <TextBox x:Name="RegisterEmailTextBox" PlaceholderText="E-mail" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding RegEmail, Mode=TwoWay}" VerticalAlignment="Top" Height="50" Width="274" Margin="0,285,0,0" />
             <Button x:Name="RegisterButton" Command="{Binding RegisterCustomerCommand}" Content="Register" HorizontalAlignment="Center" VerticalAlignment="Top" Height="50" Width="274" FontSize="18" Margin="0,350,0,0" />
-            <TextBlock Text="{Binding Message}" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  Margin="0,45,0,0" Height="50" Width="220" />
+            
         </Grid>
 
     </Grid>
