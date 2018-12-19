@@ -91,7 +91,7 @@ namespace App8
                     CurrFrame.Navigate(typeof(AdminLogin));
                     break;
                 case User.AcessLevels.Customer:
-                    CurrFrame.Navigate(typeof(CustomerView));
+                    CurrFrame.Navigate(typeof(MovieFrontPage));
                     break;
             }
         }

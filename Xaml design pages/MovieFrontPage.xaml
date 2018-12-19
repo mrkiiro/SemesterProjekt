@@ -7,7 +7,27 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Grid>
+    <Page.DataContext>
+        <local:ViewModelMovie></local:ViewModelMovie>
+    </Page.DataContext>
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+
+
+        <StackPanel Width="Auto" Height="200" HorizontalAlignment="Center" VerticalAlignment="Top" Background="Red" >
+            <ListView ItemsSource="{Binding Movies, Mode=TwoWay}">
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <!-- 'styler' elementer i listen -->
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="{Binding title}"></TextBlock>
+                            <TextBlock Text="{Binding room}"></TextBlock>
+                            <TextBlock Text="{Binding Time}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+
 
     </Grid>
 </Page>

@@ -7,11 +7,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <local:ViewModelLogin/>
+    </Page.DataContext>
     <Grid>
         <Grid.Background>
             <ImageBrush Stretch="UniformToFill" ImageSource="../Assets/_downloadfiles_wallpapers_2560_1600_avatar_mountains_9141.jpg" AlignmentY="Bottom" AlignmentX="Right"/>
         </Grid.Background>
-    
+
         <Grid x:Name="Welcome_Box" HorizontalAlignment="Center" VerticalAlignment="Center" Height="350" Width="330" Padding="20" BorderBrush="DarkSlateGray" BorderThickness="8">
             <Grid.Background>
                 <SolidColorBrush Color="LightGray" Opacity="0.80"></SolidColorBrush>
@@ -52,12 +55,5 @@
             <TextBlock Text="{Binding Message}" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  Margin="0,45,0,0" Height="50" Width="220" />
         </Grid>
 
-
-
-
     </Grid>
-
-    <Page.DataContext>
-        <local:ViewModelLogin/>
-    </Page.DataContext>
 </Page>
